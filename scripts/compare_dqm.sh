@@ -1,0 +1,3 @@
+compare_using_files.py /opt2/rootfiles/pre12/jetMETMonitoring_QCD30.root  /opt2/rootfiles/pre12/jetMETMonitoring_QCD30_posHCAL.root -C -p -R --meta "default PF clusters @@@ modified HCAL PF clusters" -o /opt2/rootfiles/pre12/jetmet_dqm_QCD30
+compare_using_files.py /opt2/rootfiles/pre12/jetMETMonitoring_QCD170.root  /opt2/rootfiles/pre12/jetMETMonitoring_QCD170_posHCAL.root -C -p -R --meta "default PF clusters @@@ modified HCAL PF clusters" -o /opt2/rootfiles/pre12/jetmet_dqm_QCD170
+compare_using_files.py /opt2/rootfiles/pre12/jetMETMonitoring_QCD1000.root  /opt2/rootfiles/pre12/jetMETMonitoring_QCD1000_posHCAL.root -C -p -R --meta "default PF clusters @@@ modified HCAL PF clusters" -o /opt2/rootfiles/pre12/jetmet_dqm_QCD1000

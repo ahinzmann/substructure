@@ -280,7 +280,9 @@ ca8PFJetsCHStrimmed = ak5PFJetsTrimmed.clone(
     rParam = cms.double(0.8),
     jetAlgorithm = cms.string("CambridgeAachen"),
     rFilt = cms.double(0.1),
-    trimPtFracMin = cms.double(0.03)
+    trimPtFracMin = cms.double(0.03),
+    writeCompound = cms.bool(True),
+    jetCollInstanceName = cms.string("SubJets")
     )
 
 jetSource = 'ca8PFJetsCHStrimmed'
@@ -350,6 +352,7 @@ ca8TrimmedGenJetsNoNu.doAreaFastjet = True
 ca8TrimmedGenJetsNoNu.useTrimming = cms.bool(True)
 ca8TrimmedGenJetsNoNu.useExplicitGhosts = cms.bool(True)
 ca8TrimmedGenJetsNoNu.writeCompound = cms.bool(True)
+ca8TrimmedGenJetsNoNu.jetCollInstanceName = cms.string("SubJets")
 ca8TrimmedGenJetsNoNu.rFilt = cms.double(0.1)
 ca8TrimmedGenJetsNoNu.trimPtFracMin = cms.double(0.03)
 ca8TrimmedGenJetsNoNu.jetPtMin = 30

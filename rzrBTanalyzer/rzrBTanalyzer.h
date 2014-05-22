@@ -3,7 +3,7 @@
 //-----------------------------------------------------------------------------
 // File:        rzrBTanalyzer.h
 // Description: Analyzer header for ntuples created by TheNtupleMaker
-// Created:     Mon Feb 10 20:33:23 2014 by mkanalyzer.py
+// Created:     Thu May 15 21:43:06 2014 by mkanalyzer.py
 // Author:      Andreas Hinzmann
 //-----------------------------------------------------------------------------
 // -- System
@@ -57,8 +57,10 @@ int	edmEventHelper_run;
 int	nPileupSummaryInfo;
 int	npatJetHelperCA8CHS;
 int	npatJetHelperCA8CHSpruned;
+int	npatJetHelperCA8CHStrimmed;
 int	npatJetHelperGenCA8CHS;
 int	npatJetHelperGenCA8CHSpruned;
+int	npatJetHelperGenCA8CHStrimmed;
 int	nrecoGenParticleHelper;
 std::vector<float>	patJetHelperCA8CHS_C2beta05(200,0);
 std::vector<float>	patJetHelperCA8CHS_C2beta10(200,0);
@@ -147,6 +149,26 @@ std::vector<float>	patJetHelperCA8CHSpruned_tau3(200,0);
 std::vector<double>	patJetHelperCA8CHSpruned_uncor_energy(200,0);
 std::vector<double>	patJetHelperCA8CHSpruned_uncor_et(200,0);
 std::vector<double>	patJetHelperCA8CHSpruned_uncor_pt(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_energy(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_et(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_eta(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_jetArea(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_jetCharge03(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_jetCharge05(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_jetCharge10(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_mass(200,0);
+std::vector<int>	patJetHelperCA8CHStrimmed_nConstituents(200,0);
+std::vector<size_t>	patJetHelperCA8CHStrimmed_numberOfDaughters(200,0);
+std::vector<int>	patJetHelperCA8CHStrimmed_partonFlavour(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_phi(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_pt(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_rapidity(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_tau1(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_tau2(200,0);
+std::vector<float>	patJetHelperCA8CHStrimmed_tau3(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_uncor_energy(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_uncor_et(200,0);
+std::vector<double>	patJetHelperCA8CHStrimmed_uncor_pt(200,0);
 std::vector<double>	patJetHelperGenCA8CHS_energy(200,0);
 std::vector<double>	patJetHelperGenCA8CHS_et(200,0);
 std::vector<double>	patJetHelperGenCA8CHS_eta(200,0);
@@ -228,6 +250,23 @@ std::vector<int>	patJetHelperGenCA8CHSpruned_partonFlavour(200,0);
 std::vector<double>	patJetHelperGenCA8CHSpruned_phi(200,0);
 std::vector<double>	patJetHelperGenCA8CHSpruned_pt(200,0);
 std::vector<double>	patJetHelperGenCA8CHSpruned_rapidity(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_energy(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_et(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_eta(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_genTau1(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_genTau2(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_genTau3(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_jetArea(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_jetCharge03(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_jetCharge05(200,0);
+std::vector<float>	patJetHelperGenCA8CHStrimmed_jetCharge10(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_mass(200,0);
+std::vector<int>	patJetHelperGenCA8CHStrimmed_nConstituents(200,0);
+std::vector<size_t>	patJetHelperGenCA8CHStrimmed_numberOfDaughters(200,0);
+std::vector<int>	patJetHelperGenCA8CHStrimmed_partonFlavour(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_phi(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_pt(200,0);
+std::vector<double>	patJetHelperGenCA8CHStrimmed_rapidity(200,0);
 std::vector<int>	recoGenParticleHelper_charge(10000,0);
 std::vector<double>	recoGenParticleHelper_eta(10000,0);
 std::vector<int>	recoGenParticleHelper_firstDaughter(10000,0);
@@ -492,6 +531,58 @@ std::ostream& operator<<(std::ostream& os, const patJetHelperCA8CHSpruned_s& o)
   return os;
 }
 //-----------------------------------------------------------------------------
+struct patJetHelperCA8CHStrimmed_s
+{
+  double	energy;
+  double	uncor_energy;
+  double	et;
+  double	uncor_et;
+  double	pt;
+  double	uncor_pt;
+  double	phi;
+  double	eta;
+  double	rapidity;
+  double	mass;
+  float	jetArea;
+  float	jetCharge03;
+  float	jetCharge05;
+  float	jetCharge10;
+  int	nConstituents;
+  int	partonFlavour;
+  size_t	numberOfDaughters;
+  float	tau1;
+  float	tau2;
+  float	tau3;
+};
+std::vector<patJetHelperCA8CHStrimmed_s> patJetHelperCA8CHStrimmed(200);
+
+std::ostream& operator<<(std::ostream& os, const patJetHelperCA8CHStrimmed_s& o)
+{
+  char r[1024];
+  os << "patJetHelperCA8CHStrimmed" << std::endl;
+  sprintf(r, "  %-32s: %f\n", "energy", (double)o.energy); os << r;
+  sprintf(r, "  %-32s: %f\n", "uncor_energy", (double)o.uncor_energy); os << r;
+  sprintf(r, "  %-32s: %f\n", "et", (double)o.et); os << r;
+  sprintf(r, "  %-32s: %f\n", "uncor_et", (double)o.uncor_et); os << r;
+  sprintf(r, "  %-32s: %f\n", "pt", (double)o.pt); os << r;
+  sprintf(r, "  %-32s: %f\n", "uncor_pt", (double)o.uncor_pt); os << r;
+  sprintf(r, "  %-32s: %f\n", "phi", (double)o.phi); os << r;
+  sprintf(r, "  %-32s: %f\n", "eta", (double)o.eta); os << r;
+  sprintf(r, "  %-32s: %f\n", "rapidity", (double)o.rapidity); os << r;
+  sprintf(r, "  %-32s: %f\n", "mass", (double)o.mass); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetArea", (double)o.jetArea); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetCharge03", (double)o.jetCharge03); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetCharge05", (double)o.jetCharge05); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetCharge10", (double)o.jetCharge10); os << r;
+  sprintf(r, "  %-32s: %f\n", "nConstituents", (double)o.nConstituents); os << r;
+  sprintf(r, "  %-32s: %f\n", "partonFlavour", (double)o.partonFlavour); os << r;
+  sprintf(r, "  %-32s: %f\n", "numberOfDaughters", (double)o.numberOfDaughters); os << r;
+  sprintf(r, "  %-32s: %f\n", "tau1", (double)o.tau1); os << r;
+  sprintf(r, "  %-32s: %f\n", "tau2", (double)o.tau2); os << r;
+  sprintf(r, "  %-32s: %f\n", "tau3", (double)o.tau3); os << r;
+  return os;
+}
+//-----------------------------------------------------------------------------
 struct patJetHelperGenCA8CHS_s
 {
   double	energy;
@@ -678,6 +769,52 @@ std::ostream& operator<<(std::ostream& os, const patJetHelperGenCA8CHSpruned_s& 
   return os;
 }
 //-----------------------------------------------------------------------------
+struct patJetHelperGenCA8CHStrimmed_s
+{
+  double	energy;
+  double	et;
+  double	pt;
+  double	phi;
+  double	eta;
+  double	rapidity;
+  double	mass;
+  float	jetArea;
+  float	jetCharge03;
+  float	jetCharge05;
+  float	jetCharge10;
+  int	nConstituents;
+  int	partonFlavour;
+  size_t	numberOfDaughters;
+  float	genTau1;
+  float	genTau2;
+  float	genTau3;
+};
+std::vector<patJetHelperGenCA8CHStrimmed_s> patJetHelperGenCA8CHStrimmed(200);
+
+std::ostream& operator<<(std::ostream& os, const patJetHelperGenCA8CHStrimmed_s& o)
+{
+  char r[1024];
+  os << "patJetHelperGenCA8CHStrimmed" << std::endl;
+  sprintf(r, "  %-32s: %f\n", "energy", (double)o.energy); os << r;
+  sprintf(r, "  %-32s: %f\n", "et", (double)o.et); os << r;
+  sprintf(r, "  %-32s: %f\n", "pt", (double)o.pt); os << r;
+  sprintf(r, "  %-32s: %f\n", "phi", (double)o.phi); os << r;
+  sprintf(r, "  %-32s: %f\n", "eta", (double)o.eta); os << r;
+  sprintf(r, "  %-32s: %f\n", "rapidity", (double)o.rapidity); os << r;
+  sprintf(r, "  %-32s: %f\n", "mass", (double)o.mass); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetArea", (double)o.jetArea); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetCharge03", (double)o.jetCharge03); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetCharge05", (double)o.jetCharge05); os << r;
+  sprintf(r, "  %-32s: %f\n", "jetCharge10", (double)o.jetCharge10); os << r;
+  sprintf(r, "  %-32s: %f\n", "nConstituents", (double)o.nConstituents); os << r;
+  sprintf(r, "  %-32s: %f\n", "partonFlavour", (double)o.partonFlavour); os << r;
+  sprintf(r, "  %-32s: %f\n", "numberOfDaughters", (double)o.numberOfDaughters); os << r;
+  sprintf(r, "  %-32s: %f\n", "genTau1", (double)o.genTau1); os << r;
+  sprintf(r, "  %-32s: %f\n", "genTau2", (double)o.genTau2); os << r;
+  sprintf(r, "  %-32s: %f\n", "genTau3", (double)o.genTau3); os << r;
+  return os;
+}
+//-----------------------------------------------------------------------------
 struct recoGenParticleHelper_s
 {
   int	firstMother;
@@ -827,6 +964,34 @@ inline void fillpatJetHelperCA8CHSpruned()
     }
 }
 
+inline void fillpatJetHelperCA8CHStrimmed()
+{
+  patJetHelperCA8CHStrimmed.resize(patJetHelperCA8CHStrimmed_energy.size());
+  for(unsigned int i=0; i < patJetHelperCA8CHStrimmed.size(); ++i)
+    {
+      patJetHelperCA8CHStrimmed[i].energy	= patJetHelperCA8CHStrimmed_energy[i];
+      patJetHelperCA8CHStrimmed[i].uncor_energy	= patJetHelperCA8CHStrimmed_uncor_energy[i];
+      patJetHelperCA8CHStrimmed[i].et	= patJetHelperCA8CHStrimmed_et[i];
+      patJetHelperCA8CHStrimmed[i].uncor_et	= patJetHelperCA8CHStrimmed_uncor_et[i];
+      patJetHelperCA8CHStrimmed[i].pt	= patJetHelperCA8CHStrimmed_pt[i];
+      patJetHelperCA8CHStrimmed[i].uncor_pt	= patJetHelperCA8CHStrimmed_uncor_pt[i];
+      patJetHelperCA8CHStrimmed[i].phi	= patJetHelperCA8CHStrimmed_phi[i];
+      patJetHelperCA8CHStrimmed[i].eta	= patJetHelperCA8CHStrimmed_eta[i];
+      patJetHelperCA8CHStrimmed[i].rapidity	= patJetHelperCA8CHStrimmed_rapidity[i];
+      patJetHelperCA8CHStrimmed[i].mass	= patJetHelperCA8CHStrimmed_mass[i];
+      patJetHelperCA8CHStrimmed[i].jetArea	= patJetHelperCA8CHStrimmed_jetArea[i];
+      patJetHelperCA8CHStrimmed[i].jetCharge03	= patJetHelperCA8CHStrimmed_jetCharge03[i];
+      patJetHelperCA8CHStrimmed[i].jetCharge05	= patJetHelperCA8CHStrimmed_jetCharge05[i];
+      patJetHelperCA8CHStrimmed[i].jetCharge10	= patJetHelperCA8CHStrimmed_jetCharge10[i];
+      patJetHelperCA8CHStrimmed[i].nConstituents	= patJetHelperCA8CHStrimmed_nConstituents[i];
+      patJetHelperCA8CHStrimmed[i].partonFlavour	= patJetHelperCA8CHStrimmed_partonFlavour[i];
+      patJetHelperCA8CHStrimmed[i].numberOfDaughters	= patJetHelperCA8CHStrimmed_numberOfDaughters[i];
+      patJetHelperCA8CHStrimmed[i].tau1	= patJetHelperCA8CHStrimmed_tau1[i];
+      patJetHelperCA8CHStrimmed[i].tau2	= patJetHelperCA8CHStrimmed_tau2[i];
+      patJetHelperCA8CHStrimmed[i].tau3	= patJetHelperCA8CHStrimmed_tau3[i];
+    }
+}
+
 inline void fillpatJetHelperGenCA8CHS()
 {
   patJetHelperGenCA8CHS.resize(patJetHelperGenCA8CHS_energy.size());
@@ -924,6 +1089,31 @@ inline void fillpatJetHelperGenCA8CHSpruned()
     }
 }
 
+inline void fillpatJetHelperGenCA8CHStrimmed()
+{
+  patJetHelperGenCA8CHStrimmed.resize(patJetHelperGenCA8CHStrimmed_energy.size());
+  for(unsigned int i=0; i < patJetHelperGenCA8CHStrimmed.size(); ++i)
+    {
+      patJetHelperGenCA8CHStrimmed[i].energy	= patJetHelperGenCA8CHStrimmed_energy[i];
+      patJetHelperGenCA8CHStrimmed[i].et	= patJetHelperGenCA8CHStrimmed_et[i];
+      patJetHelperGenCA8CHStrimmed[i].pt	= patJetHelperGenCA8CHStrimmed_pt[i];
+      patJetHelperGenCA8CHStrimmed[i].phi	= patJetHelperGenCA8CHStrimmed_phi[i];
+      patJetHelperGenCA8CHStrimmed[i].eta	= patJetHelperGenCA8CHStrimmed_eta[i];
+      patJetHelperGenCA8CHStrimmed[i].rapidity	= patJetHelperGenCA8CHStrimmed_rapidity[i];
+      patJetHelperGenCA8CHStrimmed[i].mass	= patJetHelperGenCA8CHStrimmed_mass[i];
+      patJetHelperGenCA8CHStrimmed[i].jetArea	= patJetHelperGenCA8CHStrimmed_jetArea[i];
+      patJetHelperGenCA8CHStrimmed[i].jetCharge03	= patJetHelperGenCA8CHStrimmed_jetCharge03[i];
+      patJetHelperGenCA8CHStrimmed[i].jetCharge05	= patJetHelperGenCA8CHStrimmed_jetCharge05[i];
+      patJetHelperGenCA8CHStrimmed[i].jetCharge10	= patJetHelperGenCA8CHStrimmed_jetCharge10[i];
+      patJetHelperGenCA8CHStrimmed[i].nConstituents	= patJetHelperGenCA8CHStrimmed_nConstituents[i];
+      patJetHelperGenCA8CHStrimmed[i].partonFlavour	= patJetHelperGenCA8CHStrimmed_partonFlavour[i];
+      patJetHelperGenCA8CHStrimmed[i].numberOfDaughters	= patJetHelperGenCA8CHStrimmed_numberOfDaughters[i];
+      patJetHelperGenCA8CHStrimmed[i].genTau1	= patJetHelperGenCA8CHStrimmed_genTau1[i];
+      patJetHelperGenCA8CHStrimmed[i].genTau2	= patJetHelperGenCA8CHStrimmed_genTau2[i];
+      patJetHelperGenCA8CHStrimmed[i].genTau3	= patJetHelperGenCA8CHStrimmed_genTau3[i];
+    }
+}
+
 inline void fillrecoGenParticleHelper()
 {
   recoGenParticleHelper.resize(recoGenParticleHelper_firstMother.size());
@@ -949,8 +1139,10 @@ void fillObjects()
   fillPileupSummaryInfo();
   fillpatJetHelperCA8CHS();
   fillpatJetHelperCA8CHSpruned();
+  fillpatJetHelperCA8CHStrimmed();
   fillpatJetHelperGenCA8CHS();
   fillpatJetHelperGenCA8CHSpruned();
+  fillpatJetHelperGenCA8CHStrimmed();
   fillrecoGenParticleHelper();
 }
 
@@ -1107,6 +1299,43 @@ void saveSelectedObjects()
   n = 0;
   try
     {
+       n = indexmap["patJetHelperCA8CHStrimmed"].size();
+    }
+  catch (...)
+    {}
+  if ( n > 0 )
+    {
+      std::vector<int>& index = indexmap["patJetHelperCA8CHStrimmed"];
+      for(int i=0; i < n; ++i)
+        {
+          int j = index[i];
+          patJetHelperCA8CHStrimmed_energy[i]	= patJetHelperCA8CHStrimmed_energy[j];
+          patJetHelperCA8CHStrimmed_uncor_energy[i]	= patJetHelperCA8CHStrimmed_uncor_energy[j];
+          patJetHelperCA8CHStrimmed_et[i]	= patJetHelperCA8CHStrimmed_et[j];
+          patJetHelperCA8CHStrimmed_uncor_et[i]	= patJetHelperCA8CHStrimmed_uncor_et[j];
+          patJetHelperCA8CHStrimmed_pt[i]	= patJetHelperCA8CHStrimmed_pt[j];
+          patJetHelperCA8CHStrimmed_uncor_pt[i]	= patJetHelperCA8CHStrimmed_uncor_pt[j];
+          patJetHelperCA8CHStrimmed_phi[i]	= patJetHelperCA8CHStrimmed_phi[j];
+          patJetHelperCA8CHStrimmed_eta[i]	= patJetHelperCA8CHStrimmed_eta[j];
+          patJetHelperCA8CHStrimmed_rapidity[i]	= patJetHelperCA8CHStrimmed_rapidity[j];
+          patJetHelperCA8CHStrimmed_mass[i]	= patJetHelperCA8CHStrimmed_mass[j];
+          patJetHelperCA8CHStrimmed_jetArea[i]	= patJetHelperCA8CHStrimmed_jetArea[j];
+          patJetHelperCA8CHStrimmed_jetCharge03[i]	= patJetHelperCA8CHStrimmed_jetCharge03[j];
+          patJetHelperCA8CHStrimmed_jetCharge05[i]	= patJetHelperCA8CHStrimmed_jetCharge05[j];
+          patJetHelperCA8CHStrimmed_jetCharge10[i]	= patJetHelperCA8CHStrimmed_jetCharge10[j];
+          patJetHelperCA8CHStrimmed_nConstituents[i]	= patJetHelperCA8CHStrimmed_nConstituents[j];
+          patJetHelperCA8CHStrimmed_partonFlavour[i]	= patJetHelperCA8CHStrimmed_partonFlavour[j];
+          patJetHelperCA8CHStrimmed_numberOfDaughters[i]	= patJetHelperCA8CHStrimmed_numberOfDaughters[j];
+          patJetHelperCA8CHStrimmed_tau1[i]	= patJetHelperCA8CHStrimmed_tau1[j];
+          patJetHelperCA8CHStrimmed_tau2[i]	= patJetHelperCA8CHStrimmed_tau2[j];
+          patJetHelperCA8CHStrimmed_tau3[i]	= patJetHelperCA8CHStrimmed_tau3[j];
+        }
+      npatJetHelperCA8CHStrimmed = n;
+    }
+
+  n = 0;
+  try
+    {
        n = indexmap["patJetHelperGenCA8CHS"].size();
     }
   catch (...)
@@ -1222,6 +1451,40 @@ void saveSelectedObjects()
   n = 0;
   try
     {
+       n = indexmap["patJetHelperGenCA8CHStrimmed"].size();
+    }
+  catch (...)
+    {}
+  if ( n > 0 )
+    {
+      std::vector<int>& index = indexmap["patJetHelperGenCA8CHStrimmed"];
+      for(int i=0; i < n; ++i)
+        {
+          int j = index[i];
+          patJetHelperGenCA8CHStrimmed_energy[i]	= patJetHelperGenCA8CHStrimmed_energy[j];
+          patJetHelperGenCA8CHStrimmed_et[i]	= patJetHelperGenCA8CHStrimmed_et[j];
+          patJetHelperGenCA8CHStrimmed_pt[i]	= patJetHelperGenCA8CHStrimmed_pt[j];
+          patJetHelperGenCA8CHStrimmed_phi[i]	= patJetHelperGenCA8CHStrimmed_phi[j];
+          patJetHelperGenCA8CHStrimmed_eta[i]	= patJetHelperGenCA8CHStrimmed_eta[j];
+          patJetHelperGenCA8CHStrimmed_rapidity[i]	= patJetHelperGenCA8CHStrimmed_rapidity[j];
+          patJetHelperGenCA8CHStrimmed_mass[i]	= patJetHelperGenCA8CHStrimmed_mass[j];
+          patJetHelperGenCA8CHStrimmed_jetArea[i]	= patJetHelperGenCA8CHStrimmed_jetArea[j];
+          patJetHelperGenCA8CHStrimmed_jetCharge03[i]	= patJetHelperGenCA8CHStrimmed_jetCharge03[j];
+          patJetHelperGenCA8CHStrimmed_jetCharge05[i]	= patJetHelperGenCA8CHStrimmed_jetCharge05[j];
+          patJetHelperGenCA8CHStrimmed_jetCharge10[i]	= patJetHelperGenCA8CHStrimmed_jetCharge10[j];
+          patJetHelperGenCA8CHStrimmed_nConstituents[i]	= patJetHelperGenCA8CHStrimmed_nConstituents[j];
+          patJetHelperGenCA8CHStrimmed_partonFlavour[i]	= patJetHelperGenCA8CHStrimmed_partonFlavour[j];
+          patJetHelperGenCA8CHStrimmed_numberOfDaughters[i]	= patJetHelperGenCA8CHStrimmed_numberOfDaughters[j];
+          patJetHelperGenCA8CHStrimmed_genTau1[i]	= patJetHelperGenCA8CHStrimmed_genTau1[j];
+          patJetHelperGenCA8CHStrimmed_genTau2[i]	= patJetHelperGenCA8CHStrimmed_genTau2[j];
+          patJetHelperGenCA8CHStrimmed_genTau3[i]	= patJetHelperGenCA8CHStrimmed_genTau3[j];
+        }
+      npatJetHelperGenCA8CHStrimmed = n;
+    }
+
+  n = 0;
+  try
+    {
        n = indexmap["recoGenParticleHelper"].size();
     }
   catch (...)
@@ -1272,8 +1535,10 @@ void selectVariables(itreestream& stream)
   stream.select("nPileupSummaryInfo_addPileupInfo", nPileupSummaryInfo);
   stream.select("npatJetHelper_selectedPatJetsCA8CHSwithNsub", npatJetHelperCA8CHS);
   stream.select("npatJetHelper_selectedPatJetsCA8CHSpruned", npatJetHelperCA8CHSpruned);
+  stream.select("npatJetHelper_selectedPatJetsCA8CHStrimmed", npatJetHelperCA8CHStrimmed);
   stream.select("npatJetHelper_patGenJetsCA8CHS", npatJetHelperGenCA8CHS);
   stream.select("npatJetHelper_patGenJetsCA8CHSpruned", npatJetHelperGenCA8CHSpruned);
+  stream.select("npatJetHelper_patGenJetsCA8CHStrimmed", npatJetHelperGenCA8CHStrimmed);
   stream.select("nrecoGenParticleHelper_genParticles", nrecoGenParticleHelper);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.C2beta05", patJetHelperCA8CHS_C2beta05);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.C2beta10", patJetHelperCA8CHS_C2beta10);
@@ -1362,6 +1627,26 @@ void selectVariables(itreestream& stream)
   stream.select("patJetHelper_selectedPatJetsCA8CHSpruned.uncor_energy", patJetHelperCA8CHSpruned_uncor_energy);
   stream.select("patJetHelper_selectedPatJetsCA8CHSpruned.uncor_et", patJetHelperCA8CHSpruned_uncor_et);
   stream.select("patJetHelper_selectedPatJetsCA8CHSpruned.uncor_pt", patJetHelperCA8CHSpruned_uncor_pt);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.energy", patJetHelperCA8CHStrimmed_energy);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.et", patJetHelperCA8CHStrimmed_et);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.eta", patJetHelperCA8CHStrimmed_eta);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.jetArea", patJetHelperCA8CHStrimmed_jetArea);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.jetCharge03", patJetHelperCA8CHStrimmed_jetCharge03);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.jetCharge05", patJetHelperCA8CHStrimmed_jetCharge05);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.jetCharge10", patJetHelperCA8CHStrimmed_jetCharge10);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.mass", patJetHelperCA8CHStrimmed_mass);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.nConstituents", patJetHelperCA8CHStrimmed_nConstituents);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.numberOfDaughters", patJetHelperCA8CHStrimmed_numberOfDaughters);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.partonFlavour", patJetHelperCA8CHStrimmed_partonFlavour);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.phi", patJetHelperCA8CHStrimmed_phi);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.pt", patJetHelperCA8CHStrimmed_pt);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.rapidity", patJetHelperCA8CHStrimmed_rapidity);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.tau1", patJetHelperCA8CHStrimmed_tau1);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.tau2", patJetHelperCA8CHStrimmed_tau2);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.tau3", patJetHelperCA8CHStrimmed_tau3);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.uncor_energy", patJetHelperCA8CHStrimmed_uncor_energy);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.uncor_et", patJetHelperCA8CHStrimmed_uncor_et);
+  stream.select("patJetHelper_selectedPatJetsCA8CHStrimmed.uncor_pt", patJetHelperCA8CHStrimmed_uncor_pt);
   stream.select("patJetHelper_patGenJetsCA8CHS.energy", patJetHelperGenCA8CHS_energy);
   stream.select("patJetHelper_patGenJetsCA8CHS.et", patJetHelperGenCA8CHS_et);
   stream.select("patJetHelper_patGenJetsCA8CHS.eta", patJetHelperGenCA8CHS_eta);
@@ -1443,6 +1728,23 @@ void selectVariables(itreestream& stream)
   stream.select("patJetHelper_patGenJetsCA8CHSpruned.phi", patJetHelperGenCA8CHSpruned_phi);
   stream.select("patJetHelper_patGenJetsCA8CHSpruned.pt", patJetHelperGenCA8CHSpruned_pt);
   stream.select("patJetHelper_patGenJetsCA8CHSpruned.rapidity", patJetHelperGenCA8CHSpruned_rapidity);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.energy", patJetHelperGenCA8CHStrimmed_energy);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.et", patJetHelperGenCA8CHStrimmed_et);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.eta", patJetHelperGenCA8CHStrimmed_eta);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.genTau1", patJetHelperGenCA8CHStrimmed_genTau1);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.genTau2", patJetHelperGenCA8CHStrimmed_genTau2);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.genTau3", patJetHelperGenCA8CHStrimmed_genTau3);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.jetArea", patJetHelperGenCA8CHStrimmed_jetArea);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.jetCharge03", patJetHelperGenCA8CHStrimmed_jetCharge03);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.jetCharge05", patJetHelperGenCA8CHStrimmed_jetCharge05);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.jetCharge10", patJetHelperGenCA8CHStrimmed_jetCharge10);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.mass", patJetHelperGenCA8CHStrimmed_mass);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.nConstituents", patJetHelperGenCA8CHStrimmed_nConstituents);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.numberOfDaughters", patJetHelperGenCA8CHStrimmed_numberOfDaughters);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.partonFlavour", patJetHelperGenCA8CHStrimmed_partonFlavour);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.phi", patJetHelperGenCA8CHStrimmed_phi);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.pt", patJetHelperGenCA8CHStrimmed_pt);
+  stream.select("patJetHelper_patGenJetsCA8CHStrimmed.rapidity", patJetHelperGenCA8CHStrimmed_rapidity);
   stream.select("recoGenParticleHelper_genParticles.charge", recoGenParticleHelper_charge);
   stream.select("recoGenParticleHelper_genParticles.eta", recoGenParticleHelper_eta);
   stream.select("recoGenParticleHelper_genParticles.firstDaughter", recoGenParticleHelper_firstDaughter);

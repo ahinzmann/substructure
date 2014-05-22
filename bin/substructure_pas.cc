@@ -575,8 +575,6 @@ int main(int argc, char** argv)
   dijetWtag->Branch("Jet1CorrectedPrunedMass",&jethelperCA8_correctedprunedjetmass[0],"Jet1CorrectedPrunedMass/D");
   dijetWtag->Branch("Jet1TrackMass",&jethelperCA8_trackjetmass[0],"Jet1TrackMass/D");
   dijetWtag->Branch("Jet1SplitBlockPrunedMass",&jethelperCA8_splitblockprunedjetmass[0],"Jet1SplitBlockPrunedMass/D");
-  dijetWtag->Branch("Jet1CHF",&jethelperCA8_chargedHadronEnergyFraction[0],"Jet1CHF/F");
-  dijetWtag->Branch("Jet1NHF",&jethelperCA8_neutralHadronEnergyFraction[0],"Jet1NHF/F");
   dijetWtag->Branch("Jet1MassSubjet",&Jet1MassSubjet,"Jet1MassSubjet/D");
   dijetWtag->Branch("Jet1Sj1AngleResolution",&Jet1Sj1AngleResolution,"Jet1Sj1AngleResolution/D");
   dijetWtag->Branch("Jet1Sj1PtResolution",&Jet1Sj1PtResolution,"Jet1Sj1PtResolution/D");
@@ -600,8 +598,13 @@ int main(int argc, char** argv)
   dijetWtag->Branch("Jet1jetCharge05",&jethelperCA8_jetCharge05[0],"Jet1jetCharge05/D");
   dijetWtag->Branch("Jet1jetCharge10",&jethelperCA8_jetCharge10[0],"Jet1jetCharge10/D");
   dijetWtag->Branch("Jet1nConstituents",&jethelperCA8_nConstituents[0],"Jet1nConstituents/I");
-  dijetWtag->Branch("Jet1Ncharged01",&jethelperCA8_Ncharged01[0],"Jet1Ncharged01/D");
-  dijetWtag->Branch("Jet1Nneutral01",&jethelperCA8_Nneutral01[0],"Jet1Nneutral01/D");
+  dijetWtag->Branch("Jet1chargedMultiplicity",&jethelperCA8_chargedMultiplicity[0],"Jet1chargedMultiplicity/I");
+  dijetWtag->Branch("Jet1chargedHadronEnergyFraction",&jethelperCA8_chargedHadronEnergyFraction[0],"Jet1chargedHadronEnergyFraction/F");
+  dijetWtag->Branch("Jet1neutralHadronEnergyFraction",&jethelperCA8_neutralHadronEnergyFraction[0],"Jet1neutralHadronEnergyFraction/F");
+  dijetWtag->Branch("Jet1chargedEmEnergyFraction",&jethelperCA8_chargedEmEnergyFraction[0],"Jet1chargedEmEnergyFraction/F");
+  dijetWtag->Branch("Jet1neutralEmEnergyFraction",&jethelperCA8_neutralEmEnergyFraction[0],"Jet1neutralEmEnergyFraction/F");
+  dijetWtag->Branch("Jet1Ncharged01",&jethelperCA8_Ncharged01[0],"Jet1Ncharged01/I");
+  dijetWtag->Branch("Jet1Nneutral01",&jethelperCA8_Nneutral01[0],"Jet1Nneutral01/I");
   dijetWtag->Branch("Jet1ChargedPt2",&jethelperCA8_ChargedPt2[0],"Jet1ChargedPt2/D");
   dijetWtag->Branch("Jet1Pt2",&jethelperCA8_Pt2[0],"Jet1Pt2/D");
 
@@ -941,27 +944,35 @@ SubJet1.SetPtEtaPhiM(jethelperCA8pruned_daughter_0_pt[prunedJetIndex],jethelperC
 	  */
 	  
 	  genWcharge=0;
-	  genWhadronic=1;
+	  genWhadronic=-1;
 	  Jet1quarkgluon=0;
+//   std::cerr << ngenparticlehelper << std::endl;
           for(int i=0;i<ngenparticlehelper;++i)
 	  {
 //if((DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0])<0.2))
 //   std::cerr << genparticlehelper_pdgId[i] << "," << genparticlehelper_charge[i] << "," << DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0]) << std::endl;
+//	      if((abs(genparticlehelper_pdgId[i])==24)||(i==854)) {
+//   std::cerr << genparticlehelper_pdgId[i] << "," << genparticlehelper_pt[i] << "," << DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0]) << std::endl;
+//              }
 	      if((abs(genparticlehelper_pdgId[i])==24)&&(genparticlehelper_charge[i]<0)&&(DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0])<0.2)) {
                   genWcharge=-1;
 		  if((genparticlehelper_firstDaughter[i]>=0)&&(genparticlehelper_firstDaughter[i]<ngenparticlehelper)&&(genparticlehelper_pdgId[genparticlehelper_firstDaughter[i]]>=11))
 		     genWhadronic=0;
+		  if((genWhadronic<0))
+		     genWhadronic=1;
 		  }
 if((abs(genparticlehelper_pdgId[i])==24)&&(genparticlehelper_charge[i]>0)&&(DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0])<0.2)) {
                   genWcharge=1;
 		  if((genparticlehelper_firstDaughter[i]>=0)&&(genparticlehelper_firstDaughter[i]<ngenparticlehelper)&&(genparticlehelper_pdgId[genparticlehelper_firstDaughter[i]]>=11))
 		     genWhadronic=0;
+		  if((genWhadronic<0))
+		     genWhadronic=1;
 		  }
 if((abs(genparticlehelper_pdgId[i])<=6)&&(genparticlehelper_status[i]==3)&&(DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0])<0.2))
                   Jet1quarkgluon=1;
 if(((abs(genparticlehelper_pdgId[i])==9)||(abs(genparticlehelper_pdgId[i])==21))&&(genparticlehelper_status[i]==3)&&(DeltaRfun(genparticlehelper_eta[i],jethelperCA8_eta[0],genparticlehelper_phi[i],jethelperCA8_phi[0])<0.2))
                   Jet1quarkgluon=2;
-	      if((genWcharge!=0)&&(Jet1quarkgluon!=0)) break;
+	      if((genWcharge!=0)||(Jet1quarkgluon!=0)) break;
           }
 
           TLorentzVector H,W1,W2,j11,j12,j21,j22;

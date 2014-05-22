@@ -44,13 +44,24 @@ jobname = (os.environ.get('JOB_NAME','test'))
 #jobname='QCD1000_posECAL'
 #jobname='QCD1000_posHCAL'
 #jobname='QCD1000_fixTRACK'
-jobname='QCD1000_fixTRACK_noHCAL'
+#jobname='QCD1000_fixTRACK_noHCAL'
+#jobname='QCD1000_posHCAL_fixTRACK_splitPFecal_nothing'
+
+#jobname='QCD30_posHCAL_fixTRACK_splitPFecal'
+#jobname='QCD170_posHCAL_fixTRACK_splitPFecal'
+jobname='QCD1000_posHCAL_fixTRACK_splitPFecal'
+#jobname='WW3000_posHCAL_fixTRACK_splitPFecal'
+
+#jobname='QCD30_posHCAL_fixTRACK_splitPFecal_new'
+#jobname='QCD170_posHCAL_fixTRACK_splitPFecal_new'
+#jobname='QCD1000_posHCAL_fixTRACK_splitPFecal_new'
+#jobname='WW3000_posHCAL_fixTRACK_splitPFecal_new'
 
 print 'jobname (default=test) = '+str(jobname)
 
 #
 # --- [number of events (default=1000)]
-nevents = int(os.environ.get('NEVENTS','100000'))
+nevents = int(os.environ.get('NEVENTS','2000'))
 print 'nevents (default=1000) = '+str(nevents)
 
 #
@@ -87,7 +98,7 @@ else:
 ###                              '/store/hidata/HIRun2010/HIAllPhysics/RECO/PromptReco-v2/000/150/314/D28FA8E9-4EEA-DF11-9B2A-000423D987E0.root').split(",")
 ###                              '/store/data/Commissioning09/MinimumBias/RECO/v4/000/102/347/F85D1BC6-A06A-DE11-BDF8-0019B9F581C9.root').split(",")
 ###                              '/store/data/CRAFT09/Calo/RECO/v1/000/112/220/F0B768A4-5E93-DE11-B222-000423D94524.root').split(",")
-                              'file:///tmp/hinzmann/run_reco_DIGI_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO_'+jobname+'.root').split(",")
+                              'file:///opt2/rootfiles/run_reco_DIGI_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO_'+jobname+'.root').split(",")
 
 print 'List of input files'
 print inputfiles
@@ -139,7 +150,7 @@ else:
   process.load("DQMOffline.JetMET.jetMETDQMOfflineSource_cff")
 
 process.jetMETAnalyzer.OutputMEsInRootFile = cms.bool(True)
-process.jetMETAnalyzer.OutputFileName = cms.string("/tmp/hinzmann/jetMETMonitoring_%s.root" % jobname)
+process.jetMETAnalyzer.OutputFileName = cms.string("/opt2/rootfiles/jetMETMonitoring_%s.root" % jobname)
 process.jetMETAnalyzer.TriggerResultsLabel = cms.InputTag("TriggerResults","",trigger_set)
 process.jetMETAnalyzer.processname = cms.string(trigger_set)
 #process.jetMETAnalyzer.TriggerResultsLabel = cms.InputTag("TriggerResults","","HLT8E29")

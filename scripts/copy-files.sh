@@ -1,3 +1,149 @@
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/02C796ED-C45D-E311-8519-E4115BE5F180.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/02D1D090-245D-E311-AF37-002481DE4938.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/0CC25F48-C45D-E311-8423-90B11C18754C.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/103030CE-245D-E311-8CC8-00266CFCCBF0.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/24D07BAE-265D-E311-8E2F-0025904AC2CA.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/38FD41DA-C55D-E311-83CA-B499BAAC09BE.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/3E739E1F-6361-E311-A6A4-E0CB4E4408D3.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/401B9A90-B95D-E311-916F-80000048FE80.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/40641851-AA5D-E311-8599-00266CFCCDC8.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/465D7819-325E-E311-999D-00145E5523F3.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/484F1F35-225D-E311-80F7-1CC1DE051118.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/52819779-C45D-E311-B80F-002481DE485A.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/52EB01E1-B05D-E311-8560-003048C69272.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/5A4CA527-225D-E311-B0DB-1CC1DE1CDCAE.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/644D2407-0D5E-E311-B9A1-0025904C6378.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/6AF9B9CE-0C5E-E311-B477-0025904C67A6.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/70C49F4E-675E-E311-BEC1-90B11C18634A.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/70FF8F6D-C35D-E311-9ED0-20CF3027A589.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/7AFC666C-235D-E311-A6B1-782BCB539226.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/80ADBCBC-D45D-E311-9156-0022191F53BE.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/82154E6B-265D-E311-861E-008CFA166008.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/94479F6F-235D-E311-9D64-D4AE526DF5D7.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/9CF2B74E-235D-E311-ADFB-6C3BE5B5B340.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/A8DAB8B8-C35D-E311-95E3-002481E0DB7A.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B231D6AA-265D-E311-BD58-90B11C26815E.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B2B82231-A95D-E311-B474-0025904C637C.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/C605404D-AA5D-E311-934E-D4AE526DF3BB.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/C8B31761-235D-E311-A422-D4AE526DF3BB.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/C8D285BE-C45D-E311-A3AC-00304867FD63.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/CA512642-C55D-E311-9553-002590CB0B5A.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/F493DB3B-AA5D-E311-950F-0017A4770028.root  /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_3000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/FABE8A48-225D-E311-BE01-1CC1DE046FC0.root  /tmp/hinzmann
+
+
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/12F8E21A-7458-E311-B1E0-1CC1DE056008.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/1AA92B3B-7A58-E311-82C9-00266CFE79A4.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/247149BB-7858-E311-8219-0017A4771024.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/267A2C0F-0E59-E311-B67E-842B2B2A7CF2.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/32EE89A2-8458-E311-9E22-00259073BB9A.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/34244038-8358-E311-9D7D-1CC1DE051038.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/3E8C9EE7-3E59-E311-A3FC-842B2B1858FB.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/489D4D40-8158-E311-9D0E-485B39897256.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/4AE42F49-8E58-E311-AAF9-0025907D2212.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/4E83CFAD-8258-E311-9996-0002C90B396A.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/54F0F5BF-9058-E311-B40E-008CFA197B24.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/5A9BC243-9458-E311-83B0-0017A4770438.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/6CD669BE-7F58-E311-A565-20CF305B04E3.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/6E56B0DC-7F58-E311-BD68-0002C94CD150.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/76F023DA-8558-E311-ABD1-00074305CEE3.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/7E08502D-9B58-E311-B616-008CFA1979BC.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/905E3517-9158-E311-A941-0025901AFB36.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/983EECA5-9F58-E311-911A-782BCB2100C5.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/98B0411D-DE58-E311-BBB8-00266CF3DFE0.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/A2FE269C-8658-E311-BA1A-20CF300E9EC3.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B47737F3-D958-E311-A061-00144F4526DA.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B64C2190-8158-E311-996B-0025900E3514.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B8FDC626-8358-E311-BF4E-0025907B500C.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/BC5DC1B1-7B58-E311-9435-00266CFFC544.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/C0B381CB-7958-E311-B52A-E0CB4E29C4FA.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/C4E65939-D958-E311-8972-008CFA11114C.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/D00D1C26-D958-E311-9C4E-003048344C14.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/DEE2430E-7D58-E311-B74F-00266CFFBF88.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/E2F76C60-D958-E311-84BE-D485644C3C49.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/E468582E-9458-E311-84DA-0025907B4F16.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/E875FCD1-0859-E311-8CB4-001E4F1B8E39.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/EE633476-ED58-E311-A2C6-78E7D1E49636.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/EE80E434-DA58-E311-BAA1-02163E00BA30.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/F616F4D2-D458-E311-B100-00259073E3AC.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/FAC3D566-7258-E311-A0D4-78E7D1E4B874.root /tmp/hinzmann
+
+
+
+
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/0009F12C-FF58-E311-AB45-00259073E34E.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/0238D393-8F58-E311-ADB4-00259073E4CA.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/04022CF0-9558-E311-9E13-02163E00C71F.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/0A37FBF9-8158-E311-A766-FA163E9F57B6.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/0AE4EE7E-F659-E311-B579-90B11C154A46.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/1E5E18C9-0959-E311-86F1-D48564597C70.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/203E024E-FF58-E311-ACFA-00259029E66E.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/24448250-FF58-E311-AF90-C860001BD896.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/2A345816-7358-E311-A68C-0025904B15B4.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/32EE2018-7D58-E311-B501-001D09F24682.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/361450AB-7758-E311-8B5D-D8D385AE8868.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/3A957FDC-8758-E311-B13E-003048FEB96E.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/3E2AB663-9558-E311-893E-FA163E65836C.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/4481B5E1-7E58-E311-A2AF-00261834B56B.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/4C432A36-FF58-E311-AC79-B499BAAC0068.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/5063A4A2-8158-E311-A897-0025904B2C80.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/5C470830-A058-E311-A1EF-02163E00A40C.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/6EEF1329-FF58-E311-A067-008CFA111318.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/7203B926-BD58-E311-A6DE-02163E00CE26.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/72134D12-9C58-E311-9B60-02163E00BA17.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/7ABF37E2-FF58-E311-A2CC-FA163E9ED28F.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/8A768352-FF58-E311-AB70-782BCB20E908.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/8C9D695B-8858-E311-BFF2-FA163E550EA8.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/9269E474-8158-E311-A1C3-002590D0AF4A.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/94A8CE4D-FF58-E311-BAFC-003048C69026.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/9AF1B093-8D58-E311-AB2E-002590494DA0.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/A6E1ECD2-7558-E311-8C2C-00266CFEFDE0.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/AE6B059E-FF58-E311-A3CB-FA163EB39272.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/AEDA4AD3-7A58-E311-9CB7-20CF3027A5C0.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B419BB75-9158-E311-A4FB-78E7D1E49636.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/B4F84B95-7558-E311-ABB1-0025904B2016.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/BA0ADD56-9258-E311-B73E-782BCB1F0729.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/C2B42172-E458-E311-992D-00259021A342.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/D0308D82-0159-E311-9557-1CC1DE050110.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/D66C423E-9F58-E311-9B85-782BCB204C40.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/E8A310BE-9958-E311-822D-02163E00B1C1.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/EE5BDAD0-485A-E311-878F-842B2B2AEE96.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/F2884819-8158-E311-9767-B499BAAC014E.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/FA751D30-FF58-E311-A6D8-002590D6009C.root /tmp/hinzmann
+
+
+
+
+
+
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/0AEF2351-68D1-E211-9BA3-001EC9AAA23D.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/12A26F40-BED5-E211-89CE-002590491B1C.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/1CE2E013-6BD1-E211-AEC6-0002C94CD096.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/3471EB25-47D2-E211-9B82-80000048FE80.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/3ADB76AE-C4D5-E211-A5AB-00304865C2D2.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/54C052C4-B0D5-E211-8E22-0025904897C2.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/62915750-68D1-E211-AFA8-001EC9AA9E78.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/780E5224-CBD5-E211-8BAD-00238BCE44E6.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/803871A3-A9D6-E211-A973-90B11C1863B6.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/8A2F6484-C1D5-E211-B313-00259048812E.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/8EF4094E-BBD5-E211-AD13-90B11C2AAEEC.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/90800206-68D1-E211-9BD7-0002C90B7F1A.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/9EC24E53-BBD5-E211-8D17-002590491B22.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/A0065605-B7D5-E211-8370-90B11C26815E.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/A2BD4FB2-6FD1-E211-AAFB-001EC9AA99A5.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/B4852F9A-64D1-E211-8C0D-001EC9AAD530.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/C89D0F9D-64D1-E211-851F-001EC9AABF9F.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/CCE27CC5-B8D5-E211-B2DC-0025907254B8.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/CEB9C4C2-7BD1-E211-B2F0-0002C94CD314.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/E05548D5-50D1-E211-AB71-0002C94CD0C0.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/F039FB04-A7D6-E211-9243-90B11C2CC96F.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/F6CBBA80-D9D5-E211-BB95-003048344BA6.root /tmp/hinzmann
+xrdcp root://xrootd.unl.edu//store/mc/Summer13/RSGravitonToWW_kMpl01_M_5000_TuneZ2star_14TeV_pythia6/GEN-SIM/UpgrdPhase1Age0START_STAR17_61_V1A-v3/00000/F8EF772E-C1D5-E211-9051-002590491B1C.root /tmp/hinzmann
+
+
+
+
+
 xrdcp root://xrootd.unl.edu//store/mc/Fall13/QCD_Pt-30to50_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1_castor-v1/00000/0030AD86-E152-E311-BCE8-0025907B4FC0.root /tmp/hinzmann
 xrdcp root://xrootd.unl.edu//store/mc/Fall13/QCD_Pt-30to50_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1_castor-v1/00000/0042E5FD-CC5A-E311-B27D-003048F5ADF8.root /tmp/hinzmann
 xrdcp root://xrootd.unl.edu//store/mc/Fall13/QCD_Pt-30to50_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1_castor-v1/00000/00819D6C-CB5A-E311-A913-B499BAAC0414.root /tmp/hinzmann

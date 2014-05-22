@@ -25,27 +25,70 @@ TGaxis.SetMaxDigits(3)
 
 if __name__ == '__main__':
 
- for filename in ["WW3000","QCD30","QCD170","QCD1000"]:
-  for resolution in [False,True]:
-   for runSet in [32,33]:
+ for filename in ["QCD1000","WW4000","WW3000","QCD30","QCD170"]:
+  for runSet in [31,32,33,34]:
+   for resolution in [False,True]:
      
+     if runSet==31:
+      samples = [#"substructure_pas_"+filename+".root",
+ 		 #"substructure_pas_"+filename+"_fixTRACK.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL.root",
+ 		 #"substructure_pas_"+filename+"_posCAL.root",
+ 		 #"substructure_pas_"+filename+"_fixHCAL.root",
+ 		 #"substructure_pas_"+filename+"_fixTRACK_noHCAL.root",
+ 		 "substructure_pas_"+filename+"_posHCAL_fixTRACK.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL_fixTRACK_showerSigma8.root",
+ 		 ]
+      names = ["mass",
+ 	       "mass_dr01",
+ 	       ]
+      plots = [("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+ 	       ]
+      colors=[4,2,1,6,2,2,6,6,6]
+      styles=[2,1,3,2,1,3,2,1,3]
+      widths=[2,1,1,2,1,1,2,1,1]
+      #colors=[4,4,2,2,6,6]
+      #styles=[2,1,2,1,2,1]
+      #widths=[2,1,2,1,2,1]
+      sets=["","Jet1PrunedMass"]
+
      if runSet==32:
-      samples = ["substructure_pas_"+filename+"_fixTRACK.root",
- 		 #"substructure_pas_"+filename+".root",
+      samples = [#"substructure_pas_"+filename+".root",
+ 		 #"substructure_pas_"+filename+"_fixTRACK.root",
  		 "substructure_pas_"+filename+"_posHCAL.root",
  		 #"substructure_pas_"+filename+"_posCAL.root",
  		 #"substructure_pas_"+filename+"_fixHCAL.root",
- 		 "substructure_pas_"+filename+"_fixTRACK_noHCAL.root",
+ 		 #"substructure_pas_"+filename+"_fixTRACK_noHCAL.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL_fixTRACK.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL_fixTRACK_showerSigma8.root",
+		 "substructure_pas_"+filename+"_posHCAL_fixTRACK_splitPFecal_new.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL_fixTRACK_splitPFecal2.root",
+  		 "substructure_pas_"+filename+"_posHCAL_fixTRACK_splitPFecal.root",
  		 ]
       names = ["pt",
  	       "ungroomedmass",
  	       "mass",
  	       "mass_dr01",
+               "tau21_aftermass",
+	       "nconstituents",
+	       "chargedMultiplicity",
+	       "chargedHadronEnergyFraction",
+	       "neutralHadronEnergyFraction",
+	       "chargedEmEnergyFraction",
+	       "neutralEmEnergyFraction",
  	       ]
       plots = [("Jet1pt","((abs(Jet1eta)<2.4))","jet p_{T} (GeV)"),
  	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4))","jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
+           ("Jet1nConstituents","((abs(Jet1eta)<2.4))","jet constituents", ),
+           ("Jet1chargedMultiplicity","((abs(Jet1eta)<2.4))","jet charged constituents", ),
+           ("Jet1chargedHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet CHF", ),
+           ("Jet1neutralHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet NHF", ),
+           ("Jet1chargedEmEnergyFraction","((abs(Jet1eta)<2.4))","jet CEF", ),
+           ("Jet1neutralEmEnergyFraction","((abs(Jet1eta)<2.4))","jet NEF", ),
  	       ]
       colors=[4,2,1,6,2,2,6,6,6]
       styles=[2,1,3,2,1,3,2,1,3]
@@ -57,22 +100,67 @@ if __name__ == '__main__':
 
      if runSet==33:
       if filename!="WW3000": continue
-      samples = ["substructure_pas_"+filename+"_fixTRACK.root",
- 		 #"substructure_pas_"+filename+".root",
- 		 "substructure_pas_"+filename+"_posHCAL.root",
+      samples = ["substructure_pas_"+filename+".root",
+ 		 "substructure_pas_"+filename+"_fixTRACK.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL.root",
  		 #"substructure_pas_"+filename+"_posCAL.root",
  		 #"substructure_pas_"+filename+"_fixHCAL.root",
- 		 "substructure_pas_"+filename+"_fixTRACK_noHCAL.root",
+ 		 #"substructure_pas_"+filename+"_fixTRACK_noHCAL.root",
+ 		 "substructure_pas_"+filename+"_posHCAL_fixTRACK.root",
+ 		 #"substructure_pas_"+filename+"_posHCAL_fixTRACK_showerSigma8.root",
+ 		 "substructure_pas_"+filename+"_posHCAL_fixTRACK_splitPFecal.root",
  		 ]
       names = ["pt",
  	       "ungroomedmass",
  	       "mass",
  	       "mass_dr01",
+               "tau21_aftermass",
+	       "nconstituents"
  	       ]
       plots = [("Jet1pt","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","jet p_{T} (GeV)"),
  	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","pruned jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
+           ("Jet1nConstituents","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","jet constituents", ),
+ 	       ]
+      colors=[4,2,1,6,2,2,6,6,6]
+      styles=[2,1,3,2,1,3,2,1,3]
+      widths=[2,1,1,2,1,1,2,1,1]
+      #colors=[4,4,2,2,6,6]
+      #styles=[2,1,2,1,2,1]
+      #widths=[2,1,2,1,2,1]
+      sets=[""]
+
+     if runSet==34:
+      if not ("WW3000" in filename or "WW4000" in filename): continue
+      samples = [#"substructure_pas_"+filename+"_posHCAL.root",
+ 		 "substructure_pas_"+filename+"_posHCAL_noSplitting.root",
+ 		 "substructure_pas_"+filename+"_posHCAL_splitting.root",
+ 		 ]
+      names = ["pt",
+ 	       "ungroomedmass",
+ 	       "mass",
+ 	       "mass_dr01",
+               "tau21_aftermass",
+	       "nconstituents",
+	       "chargedMultiplicity",
+	       "chargedHadronEnergyFraction",
+	       "neutralHadronEnergyFraction",
+	       "chargedEmEnergyFraction",
+	       "neutralEmEnergyFraction",
+ 	       ]
+      plots = [("Jet1pt","((abs(Jet1eta)<2.4))","jet p_{T} (GeV)"),
+ 	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4))","jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
+           ("Jet1nConstituents","((abs(Jet1eta)<2.4))","jet constituents", ),
+           ("Jet1chargedMultiplicity","((abs(Jet1eta)<2.4))","jet charged constituents", ),
+           ("Jet1chargedHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet CHF", ),
+           ("Jet1neutralHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet NHF", ),
+           ("Jet1chargedEmEnergyFraction","((abs(Jet1eta)<2.4))","jet CEF", ),
+           ("Jet1neutralEmEnergyFraction","((abs(Jet1eta)<2.4))","jet NEF", ),
  	       ]
       colors=[4,2,1,6,2,2,6,6,6]
       styles=[2,1,3,2,1,3,2,1,3]
@@ -157,8 +245,11 @@ if __name__ == '__main__':
  	   hist=TH1F(histname,histname,25,-1,1);
  	   hist.GetYaxis().SetRangeUser(0,50000)
  	   hist.GetXaxis().SetRangeUser(-1,1)
- 	if plot[2]=="jet constituents":
+ 	if plot[2]=="jet constituents" or plot[2]=="jet charged constituents":
  	   hist=TH1F(histname,histname,25,0,200);
+ 	   hist.GetYaxis().SetRangeUser(0,50000)
+ 	if plot[2]=="jet CHF" or plot[2]=="jet NHF" or plot[2]=="jet CEF" or plot[2]=="jet NEF":
+ 	   hist=TH1F(histname,histname,25,0,1);
  	   hist.GetYaxis().SetRangeUser(0,50000)
  	if plot[2]=="charged particles (p_{T}^{rel}>0.1)":
  	   hist=TH1F(histname,histname,25,0,25);
@@ -270,15 +361,15 @@ if __name__ == '__main__':
  	    variable="(Jet1pt-GenJet1pt)/GenJet1pt"
  	
  	if resolution and "/" in variable:
-           hist=TH1F(histname,histname,40,-0.5,0.5);
+           hist=TH1F(histname,histname,200,-1.0,1.0);
  	   hist.GetYaxis().SetRangeUser(0,50000)
  	if resolution and not "/" in variable:
-           hist=TH1F(histname,histname,50,-100,100);
+           hist=TH1F(histname,histname,100,-100,100);
  	   hist.GetYaxis().SetRangeUser(0,50000)
 
  	print histname,variable,cutstring
  	tree.Project(histname,variable,cutstring)
- 	if runSet==32 or runSet==33 or runSet==34:
+ 	if runSet==31 or runSet==32 or runSet==33 or runSet==34:
  	   hist.Rebin(2)
  	if "QCD" in sample:
  	    originalIntegral[histname]=hist.Integral()
@@ -301,6 +392,11 @@ if __name__ == '__main__':
  	hists+=[hist]
 	means+=[hist.GetMean()]
 	rms+=[hist.GetRMS()]
+	fit=TF1("g","gaus",0,2)
+	fit.SetRange(-0.1,0.1)
+	hist.Fit(fit,"qn0r")
+	#print "fit:",fit.GetParameter(1),fit.GetParameter(2)
+	#rms[-1]=fit.GetParameter(2)
         """
  	if "QCD1000" in sample:
  	    histname500="plot"+names[plots.index(plot)]+gen+str(s-1)
@@ -386,31 +482,45 @@ if __name__ == '__main__':
  	  legend.AddEntry(hist,"X #rightarrow W_{T}W_{T} Herwig++","l")
  	elif gen=="Gen" and "Py6" in  sample:
  	  legend.AddEntry(hist,"X #rightarrow W_{T}W_{T} Pythia6","l")
+ 	elif runSet==31 and gen=="":
+ 	  legend.AddEntry(hist,"default PF","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==31 and gen!="":
+ 	  legend.AddEntry(hist,"charged distribution","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	#elif runSet==32 and s==1:
+ 	#  legend.AddEntry(hist,"default PF clusters","l")
+ 	#  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	elif runSet==32 and s==1:
- 	  legend.AddEntry(hist,"default PF clusters","l")
+ 	  legend.AddEntry(hist,"default PF algo","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	elif runSet==32 and s==2:
- 	  legend.AddEntry(hist,"mod. HCAL clusters","l")
+ 	  legend.AddEntry(hist,"split PF photons","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	#elif runSet==32 and s==3:
+ 	#  legend.AddEntry(hist,"split PF n.hadrons","l")
+ 	#  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	elif runSet==32 and s==3:
- 	  legend.AddEntry(hist,"no HCAL clusters","l")
- 	  #legend.AddEntry(hist,"mod. ECAL+HCAL clusters","l")
- 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
- 	elif runSet==32 and s==4:
- 	  legend.AddEntry(hist,"mod. block tracks","l")
+ 	  legend.AddEntry(hist,"split PF neutrals","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	elif runSet==33 and s==1:
  	  legend.AddEntry(hist,"default PF clusters","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
- 	elif runSet==33 and s==2:
+ 	elif runSet==33 and s==3:
  	  legend.AddEntry(hist,"mod. HCAL clusters","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
- 	elif runSet==33 and s==3:
- 	  legend.AddEntry(hist,"no HCAL clusters","l")
- 	  #legend.AddEntry(hist,"mod. ECAL+HCAL clusters","l")
- 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	elif runSet==33 and s==4:
+ 	  #legend.AddEntry(hist,"sigma=8 HCAL clusters","l")
+ 	  legend.AddEntry(hist,"mod. PF neutrals","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==33 and s==2:
  	  legend.AddEntry(hist,"mod. block tracks","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==34 and s==1:
+ 	  legend.AddEntry(hist,"no splitting","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==34 and s==2:
+ 	  legend.AddEntry(hist,"with splitting","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	else:
  	  legend.AddEntry(hist," + <PU>=22 + sim.","l")

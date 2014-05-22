@@ -22,43 +22,104 @@ runNoCHS = False
 runCaloJets = False
 runCA8jets = True
 runQJets = False
-writePatTuple = True
-runTrimmedCA8jets = False
+writePatTuple = False
+runTrimmedCA8jets = True
 
 # Input file
 
 #samplename='WW3000'
 #samplename='WW3000_posCAL'
 #samplename='WW3000_posECAL'
-#samplename='WW3000_posHCAL'
 #samplename='WW3000_fixHCAL'
 #samplename='WW3000_fixTRACK'
 #samplename='WW3000_fixTRACK_noHCAL'
+#samplename='WW3000_posHCAL_fixTRACK'
+#samplename='WW3000_posHCAL_fixTRACK_showerSigma8'
+#samplename='WW2000_posHCAL_fixTRACK'
+#samplename='WW4000_posHCAL_fixTRACK'
+#samplename='qW5000_posHCAL_fixTRACK'
+#samplename='qW7000_posHCAL_fixTRACK'
 #samplename='QCD30'
 #samplename='QCD30_posCAL'
 #samplename='QCD30_posECAL'
-#samplename='QCD30_posHCAL'
 #samplename='QCD30_fixHCAL'
 #samplename='QCD30_fixTRACK'
 #samplename='QCD30_fixTRACK_noHCAL'
+#samplename='QCD30_posHCAL_fixTRACK'
+#samplename='QCD30_posHCAL_fixTRACK_showerSigma8'
 #samplename='QCD170'
 #samplename='QCD170_posCAL'
 #samplename='QCD170_posECAL'
-#samplename='QCD170_posHCAL'
 #samplename='QCD170_fixHCAL'
 #samplename='QCD170_fixTRACK'
 #samplename='QCD170_fixTRACK_noHCAL'
+#samplename='QCD170_posHCAL_fixTRACK'
+#samplename='QCD170_posHCAL_fixTRACK_showerSigma8'
 #samplename='QCD1000'
 #samplename='QCD1000_posCAL'
 #samplename='QCD1000_posECAL'
-#samplename='QCD1000_posHCAL'
 #samplename='QCD1000_fixHCAL'
 #samplename='QCD1000_fixTRACK'
-samplename='QCD1000_fixTRACK_noHCAL'
+#samplename='QCD1000_fixTRACK_noHCAL'
+#samplename='QCD1000_posHCAL_fixTRACK'
+#samplename='QCD1000_posHCAL_fixTRACK_showerSigma8'
+#samplename='QCD1800_posHCAL_fixTRACK'
+
+#samplename='WW2000_posHCAL_fixTRACK_splitPFecal'
+samplename='WW3000_posHCAL_fixTRACK_splitPFecal'
+#samplename='WW4000_posHCAL_fixTRACK_splitPFecal'
+#samplename='qW3000_posHCAL_fixTRACK_splitPFecal'
+#samplename='qW5000_posHCAL_fixTRACK_splitPFecal'
+#samplename='qW7000_posHCAL_fixTRACK_splitPFecal'
+#samplename='QCD30_posHCAL_fixTRACK_splitPFecal'
+#samplename='QCD170_posHCAL_fixTRACK_splitPFecal'
+#samplename='QCD1000_posHCAL_fixTRACK_splitPFecal'
+#samplename='QCD1800_posHCAL_fixTRACK_splitPFecal'
+
+#samplename='WW3000_posHCAL_fixTRACK_splitPFecal2'
+#samplename='QCD1000_posHCAL_fixTRACK_splitPFecal2'
+#samplename='WW3000_posHCAL_fixTRACK_splitPFecal3'
+#samplename='WW4000_posHCAL_fixTRACK_splitPFecal3'
+#samplename='QCD1000_posHCAL_fixTRACK_splitPFecal3'
+
+#samplename='WW3000_posHCAL_PU'
+#samplename='WW2000_posHCAL_PU'
+#samplename='WW4000_posHCAL_PU'
+#samplename='qW5000_posHCAL_PU'
+#samplename='qW7000_posHCAL_PU'
+#samplename='QCD30_posHCAL_PU'
+#samplename='QCD170_posHCAL_PU'
+#samplename='QCD1000_posHCAL_PU'
+#samplename='QCD1800_posHCAL_PU'
+
+#samplename='WW3000_posHCAL'
+#samplename='WW2000_posHCAL'
+#samplename='WW4000_posHCAL'
+#samplename='qW5000_posHCAL'
+#samplename='qW7000_posHCAL'
+#samplename='QCD30_posHCAL'
+#samplename='QCD170_posHCAL'
+#samplename='QCD1000_posHCAL'
+#samplename='QCD1800_posHCAL'
+
+#samplename='WW3000_posHCAL_splitting'
+#samplename='WW3000_posHCAL_noSplitting'
+#samplename='WW4000_posHCAL_splitting'
+#samplename='WW4000_posHCAL_noSplitting'
+
+#samplename='WW2000_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='WW3000_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='WW4000_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='qW5000_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='qW7000_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='QCD30_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='QCD170_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='QCD1000_posHCAL_fixTRACK_splitPFecal_new'
+#samplename='QCD1800_posHCAL_fixTRACK_splitPFecal_new'
 
 process.source = cms.Source("PoolSource",
     secondaryFileNames = cms.untracked.vstring(),
-    fileNames = cms.untracked.vstring('file:///tmp/hinzmann/run_reco_DIGI_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO_'+samplename+'.root')
+    fileNames = cms.untracked.vstring('file:///opt2/rootfiles/run_reco_DIGI_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO_'+samplename+'.root')
 )
 
 print 'input:', process.source.fileNames
@@ -167,8 +228,25 @@ if runCaloJets:
 
 print 'Global tag       : ', process.GlobalTag.globaltag
 
+process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
+process.printTree2 = cms.EDAnalyzer("ParticleTreeDrawer",
+                                   src = cms.InputTag("genParticles"),                                                                 
+                                   printP4 = cms.untracked.bool(False),
+                                   printPtEtaPhi = cms.untracked.bool(False),
+                                   printVertex = cms.untracked.bool(False),
+                                   printStatus = cms.untracked.bool(False),
+                                   printIndex = cms.untracked.bool(False),
+                                   status = cms.untracked.vint32( -1 )
+                                   )
+process.printTree = cms.EDAnalyzer("ParticleListDrawer",
+  maxEventsToPrint = cms.untracked.int32(1),
+  printVertex = cms.untracked.bool(False),
+  src = cms.InputTag("genParticles")
+)
+process.gen_print = cms.Path(process.printTree)
+
 process.p = cms.Path()
-process.schedule = cms.Schedule(process.p)
+process.schedule = cms.Schedule(process.gen_print,process.p)
 
 process.tnmc1 = cms.Sequence(process.PATCMGPileUpSubtractionSequence)
 if runCA8jets:
@@ -197,4 +275,4 @@ if writePatTuple:
   process.outpath = cms.EndPath(process.out)
   process.schedule.append(process.outpath)
 
-process.demo.ntupleName=cms.untracked.string('/tmp/hinzmann/ntuple_'+samplename+'.root')
+process.demo.ntupleName=cms.untracked.string('/opt2/rootfiles/ntuple_'+samplename+'.root')

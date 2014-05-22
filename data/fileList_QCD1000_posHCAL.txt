@@ -1,1 +1,1 @@
-root:///opt2/rootfiles/pre12/ntuple_QCD1000_posHCAL.root
+root:///opt2/rootfiles/ntuple_QCD1000_posHCAL.root

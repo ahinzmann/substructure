@@ -259,6 +259,11 @@ int main(int argc, char** argv)
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.getCorrectedPrunedJetMass", jethelperCA8_correctedprunedjetmass);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.getTrackJetMass", jethelperCA8_trackjetmass);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.getSplitBlockPrunedJetMass", jethelperCA8_splitblockprunedjetmass);
+  stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.jetWidth", jethelperCA8_width);
+  stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.getAK8JetMass", jethelperCA8_ak8mass);
+  stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.jetPFblocks", jethelperCA8_nPFblocks);
+  stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.jetECALclusters", jethelperCA8_nECALclusters);
+  stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.jetHCALclusters", jethelperCA8_nHCALclusters);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.nConstituents", jethelperCA8_nConstituents);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.partonFlavour", jethelperCA8_partonFlavour);
   stream.select("patJetHelper_selectedPatJetsCA8CHSwithNsub.chargedEmEnergyFraction", jethelperCA8_chargedEmEnergyFraction);
@@ -321,7 +326,15 @@ int main(int argc, char** argv)
   stream.select("patJetHelper_patGenJetsCA8CHS.eta", jethelperGenCA8_eta);
   stream.select("patJetHelper_patGenJetsCA8CHS.jetArea", jethelperGenCA8_jetArea);
   stream.select("patJetHelper_patGenJetsCA8CHS.mass", jethelperGenCA8_mass);
+
+  stream.select("patJetHelper_patGenJetsCA8CHS.genJetWidth", jethelperGenCA8_width);
   stream.select("patJetHelper_patGenJetsCA8CHS.nConstituents", jethelperGenCA8_nConstituents);
+  stream.select("patJetHelper_patGenJetsCA8CHS.genChargedEmEnergyFraction", jethelperGenCA8_chargedEmEnergyFraction);
+  stream.select("patJetHelper_patGenJetsCA8CHS.genChargedHadronEnergyFraction", jethelperGenCA8_chargedHadronEnergyFraction);
+  stream.select("patJetHelper_patGenJetsCA8CHS.genChargedMultiplicity", jethelperGenCA8_chargedMultiplicity);
+  stream.select("patJetHelper_patGenJetsCA8CHS.genNeutralEmEnergyFraction", jethelperGenCA8_neutralEmEnergyFraction);
+  stream.select("patJetHelper_patGenJetsCA8CHS.genNeutralHadronEnergyFraction", jethelperGenCA8_neutralHadronEnergyFraction);
+
   stream.select("patJetHelper_patGenJetsCA8CHS.partonFlavour", jethelperGenCA8_partonFlavour);
   stream.select("patJetHelper_patGenJetsCA8CHS.phi", jethelperGenCA8_phi);
   stream.select("patJetHelper_patGenJetsCA8CHS.pt", jethelperGenCA8_pt);
@@ -597,6 +610,12 @@ int main(int argc, char** argv)
   dijetWtag->Branch("Jet1jetCharge03",&jethelperCA8_jetCharge03[0],"Jet1jetCharge03/D");
   dijetWtag->Branch("Jet1jetCharge05",&jethelperCA8_jetCharge05[0],"Jet1jetCharge05/D");
   dijetWtag->Branch("Jet1jetCharge10",&jethelperCA8_jetCharge10[0],"Jet1jetCharge10/D");
+  dijetWtag->Branch("Jet1width",&jethelperCA8_width[0],"Jet1width/F");
+  dijetWtag->Branch("Jet1area",&jethelperCA8_jetArea[0],"Jet1area/F");
+  dijetWtag->Branch("Jet1AK8Mass",&jethelperCA8_ak8mass[0],"Jet1AK8Mass/D");
+  dijetWtag->Branch("Jet1nPFblocks",&jethelperCA8_nPFblocks[0],"Jet1nPFblocks/I");
+  dijetWtag->Branch("Jet1nECALclusters",&jethelperCA8_nECALclusters[0],"Jet1nECALclusters/I");
+  dijetWtag->Branch("Jet1nHCALclusters",&jethelperCA8_nHCALclusters[0],"Jet1nHCALclusters/I");
   dijetWtag->Branch("Jet1nConstituents",&jethelperCA8_nConstituents[0],"Jet1nConstituents/I");
   dijetWtag->Branch("Jet1chargedMultiplicity",&jethelperCA8_chargedMultiplicity[0],"Jet1chargedMultiplicity/I");
   dijetWtag->Branch("Jet1chargedHadronEnergyFraction",&jethelperCA8_chargedHadronEnergyFraction[0],"Jet1chargedHadronEnergyFraction/F");
@@ -647,7 +666,7 @@ int main(int argc, char** argv)
   double GenJet1UnGroomedMass;
   double GenJet1NsubPUcorrected;
   double GenJet1NsubPUcorrectedCHS;
-  double GenJet1NCHS;
+  int GenJet1NCHS;
   double GenJet1C2beta05;
   double GenJet1C2beta10;
   double GenJet1C2beta15;
@@ -658,9 +677,18 @@ int main(int argc, char** argv)
   double GenJet1jetCharge03;
   double GenJet1jetCharge05;
   double GenJet1jetCharge10;
-  double GenJet1nConstituents;
-  double GenJet1Ncharged01;
-  double GenJet1Nneutral01;
+
+  float GenJet1width;
+  float GenJet1area;
+  int GenJet1nConstituents;
+  int GenJet1chargedMultiplicity;
+  float GenJet1chargedHadronEnergyFraction;
+  float GenJet1neutralHadronEnergyFraction;
+  float GenJet1chargedEmEnergyFraction;
+  float GenJet1neutralEmEnergyFraction;
+
+  int GenJet1Ncharged01;
+  int GenJet1Nneutral01;
   double GenJet1ChargedPt2;
   double GenJet1Pt2;
 
@@ -715,7 +743,16 @@ int main(int argc, char** argv)
   dijetWtag->Branch("GenJet1jetCharge03",&GenJet1jetCharge03,"GenJet1jetCharge03/D");
   dijetWtag->Branch("GenJet1jetCharge05",&GenJet1jetCharge05,"GenJet1jetCharge05/D");
   dijetWtag->Branch("GenJet1jetCharge10",&GenJet1jetCharge10,"GenJet1jetCharge10/D");
+  
+  dijetWtag->Branch("GenJet1width",&GenJet1width,"GenJet1width/F");
+  dijetWtag->Branch("GenJet1area",&GenJet1area,"GenJet1area/F");
   dijetWtag->Branch("GenJet1nConstituents",&GenJet1nConstituents,"GenJet1nConstituents/I");
+  dijetWtag->Branch("GenJet1chargedMultiplicity",&GenJet1chargedMultiplicity,"GenJet1chargedMultiplicity/I");
+  dijetWtag->Branch("GenJet1chargedHadronEnergyFraction",&GenJet1chargedHadronEnergyFraction,"GenJet1chargedHadronEnergyFraction/F");
+  dijetWtag->Branch("GenJet1neutralHadronEnergyFraction",&GenJet1neutralHadronEnergyFraction,"GenJet1neutralHadronEnergyFraction/F");
+  dijetWtag->Branch("GenJet1chargedEmEnergyFraction",&GenJet1chargedEmEnergyFraction,"GenJet1chargedEmEnergyFraction/F");
+  dijetWtag->Branch("GenJet1neutralEmEnergyFraction",&GenJet1neutralEmEnergyFraction,"GenJet1neutralEmEnergyFraction/F");
+
   dijetWtag->Branch("GenJet1Ncharged01",&GenJet1Ncharged01,"GenJet1Ncharged01/D");
   dijetWtag->Branch("GenJet1Nneutral01",&GenJet1Nneutral01,"GenJet1Nneutral01/D");
   dijetWtag->Branch("GenJet1ChargedPt2",&GenJet1ChargedPt2,"GenJet1ChargedPt2/D");
@@ -926,7 +963,16 @@ SubJet1.SetPtEtaPhiM(jethelperCA8pruned_daughter_0_pt[prunedJetIndex],jethelperC
           GenJet1jetCharge03=jethelperGenCA8_jetCharge03[genJetIndex];
           GenJet1jetCharge05=jethelperGenCA8_jetCharge05[genJetIndex];
           GenJet1jetCharge10=jethelperGenCA8_jetCharge10[genJetIndex];
+
+          GenJet1width=jethelperGenCA8_width[genJetIndex];
+          GenJet1area=jethelperGenCA8_jetArea[genJetIndex];
           GenJet1nConstituents=jethelperGenCA8_nConstituents[genJetIndex];
+          GenJet1chargedMultiplicity=jethelperGenCA8_chargedMultiplicity[genJetIndex];
+          GenJet1chargedHadronEnergyFraction=jethelperGenCA8_chargedHadronEnergyFraction[genJetIndex];
+          GenJet1neutralHadronEnergyFraction=jethelperGenCA8_neutralHadronEnergyFraction[genJetIndex];
+          GenJet1chargedEmEnergyFraction=jethelperGenCA8_chargedEmEnergyFraction[genJetIndex];
+          GenJet1neutralEmEnergyFraction=jethelperGenCA8_neutralEmEnergyFraction[genJetIndex];
+
           GenJet1Ncharged01=jethelperGenCA8_Ncharged01[genJetIndex];
           GenJet1Nneutral01=jethelperGenCA8_Nneutral01[genJetIndex];
           GenJet1ChargedPt2=jethelperGenCA8_ChargedPt2[genJetIndex];

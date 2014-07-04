@@ -29,29 +29,32 @@ theory=False
 for runSet in [1,2]:
 
  names = ["npv",
+          "npu",
 	   "pt",
 	   "eta",
 	   ]
- plots = [("numberOfPrimaryVertices","vertexWeight*((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>890)&&(Jet1pt>800))","number of vertices"),
-           ("Jet1pt","vertexWeight*((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>890)&&(Jet1pt>800))","jet p_{T} (GeV)"),
-           ("Jet1eta","vertexWeight*((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>890&&(Jet1pt>800)))","jet #eta"),
+ plots = [("numberOfPrimaryVertices","vertexWeight*((abs(Jet1eta)<2.4))","number of vertices"),
+           ("nPU","vertexWeight*((abs(Jet1eta)<2.4))","number of PU interactions"),
+           ("Jet1pt","vertexWeight*((abs(Jet1eta)<2.4))","jet p_{T} (GeV)"),
+           ("Jet1eta","vertexWeight*((abs(Jet1eta)<2.4))","jet #eta"),
            ]
 
  jetmasscut="&&(Jet1Mass>60)&&(Jet1Mass<100)"
 
 
  if runSet==1:
-  massbins=[800,1000,1250,1500,2000,2500,3000,3500,4000]
-  samples = ["substructure_pas_WW2000_posHCAL.root",
-             "substructure_pas_WW3000_posHCAL.root",
-             "substructure_pas_WW4000_posHCAL.root",
-             "substructure_pas_qW5000_posHCAL.root",
-             "substructure_pas_qW7000_posHCAL.root",
-             "substructure_pas_WW2000_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_WW3000_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_WW4000_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_qW5000_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_qW7000_posHCAL_fixTRACK_splitPFecal.root",
+  massbins=[250,500,750,1000,1500,2000,2500,3000,3500,4000]
+  samples = [#"substructure_pas_WW2000_posHCAL.root",
+             #"substructure_pas_WW3000_posHCAL.root",
+             #"substructure_pas_WW4000_posHCAL.root",
+             #"substructure_pas_qW5000_posHCAL.root",
+             #"substructure_pas_qW7000_posHCAL.root",
+             "substructure_pas_WW1000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_WW2000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_WW3000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_WW4000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_qW5000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_qW7000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
              ]
   colors=[1,1,2,2,1,1,2,2,1,1,2,2,]
   styles=[2,1,2,1,2,1,2,1,2,1,2,1,]
@@ -61,15 +64,14 @@ for runSet in [1,2]:
   #widths=[2,1,2,1,2,1,]
 
  if runSet==2:
-  massbins=[800,1000,1300,1700,2200]
-  samples = ["substructure_pas_QCD30_posHCAL.root",
-             "substructure_pas_QCD170_posHCAL.root",
-             "substructure_pas_QCD1000_posHCAL.root",
-             "substructure_pas_QCD1800_posHCAL.root",
-             "substructure_pas_QCD30_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_QCD170_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_QCD1000_posHCAL_fixTRACK_splitPFecal.root",
-             "substructure_pas_QCD1800_posHCAL_fixTRACK_splitPFecal.root",
+  massbins=[800,1200,1600,2200,3000]
+  samples = [#"substructure_pas_QCD30_posHCAL.root",
+             #"substructure_pas_QCD170_posHCAL.root",
+             #"substructure_pas_QCD1000_posHCAL.root",
+             #"substructure_pas_QCD1800_posHCAL.root",
+             #"substructure_pas_QCD170_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_QCD1000_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+             "substructure_pas_QCD1800_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
             ]
   colors=[1,2,4,6,1,1,2,4,6,1,1,2,4,6,1]
   styles=[2,1,2,1,1,1,1,2,3,1,1,1,2,3,1]
@@ -77,7 +79,7 @@ for runSet in [1,2]:
 
  results=[]
  for plot in plots:
-  if runSet==2:
+  if runSet==3:
     canvas = TCanvas("","",0,0,200,260)
     canvas.Divide(1,2,0,0,0)
     canvas.GetPad(1).SetPad(0.0,0.28,1.0,1.0)
@@ -107,6 +109,7 @@ for runSet in [1,2]:
   maximum=0
   for nominator in [0,1,2]:
    s=0
+   firstQCD=True
    for sample in samples:
     s+=1
     print sample, nominator
@@ -117,10 +120,16 @@ for runSet in [1,2]:
     signal = "Hpp" in sample or "Py6" in sample or "Bulk" in sample or "SM" in sample or "PS" in sample or "W" in sample
     histname="plot"+names[plots.index(plot)]+"_"+str(nominator)+str(s)
     if plot[2]=="number of vertices" and (runSet!=1 and runSet<5):
-       hist=TH1F(histname,histname,15,5,35);
+       hist=TH1F(histname,histname,15,5,50);
        hist.GetYaxis().SetRangeUser(0,50000)
     if plot[2]=="number of vertices" and (runSet==1 or runSet>=5):
-       hist=TH1F(histname,histname,6,0,30);
+       hist=TH1F(histname,histname,6,0,50);
+       hist.GetYaxis().SetRangeUser(0,50000)
+    if plot[2]=="number of PU interactions" and runSet==1:
+       hist=TH1F(histname,histname,6,20,50);
+       hist.GetYaxis().SetRangeUser(0,50000)
+    elif plot[2]=="number of PU interactions":
+       hist=TH1F(histname,histname,3,20,50);
        hist.GetYaxis().SetRangeUser(0,50000)
     if plot[2]=="jet #eta" and (runSet!=1 and runSet<5):
        hist=TH1F(histname,histname,20,-2.4,2.4);
@@ -139,11 +148,11 @@ for runSet in [1,2]:
     if "WW" in sample or "qW" in sample:
         cutstring+="&&(Jet1genWhadronic==1)"
     if not "jet p_{T}" in plot[2]:
-        cutstring+="&&(Jet1pt<1000)"
+        cutstring+="&&(Jet1pt<1300)"
     if nominator==1:
         cutstring+=jetmasscut
     if nominator==2:
-        cutstring+=jetmasscut+"&&(Jet1Nsub<0.5)"
+        cutstring+=jetmasscut+"&&(Jet1Nsub<0.6)"
     if (runSet==3 and s==1) or (runSet==4 and s<=2):
         cutstring+="&&(Jet1quarkgluon==2)"
     if (runSet==3 and s==2) or (runSet==4 and s>=3):
@@ -158,7 +167,7 @@ for runSet in [1,2]:
     else:
         hist.SetMarkerStyle(21)
     #hist.SetMarkerSize(2)
-    if runSet==2:
+    if runSet==3:
       hist.GetXaxis().SetTitle("")
       hist.GetXaxis().SetLabelColor(0)
     else:
@@ -172,10 +181,10 @@ for runSet in [1,2]:
 
     hists+=[hist]
 
-    if "QCD" in sample and not "30" in sample:
-        samplenames=["30","170","1000","1800"]
-	samplenumbers=[1,1,1,1]
-	samplecrossections=[1,1,1,1]
+    if "QCD" in sample and not firstQCD and not "flat" in sample:
+        samplenames=["1000","1800"]
+	samplenumbers=[1,1]
+	samplecrossections=[1,2]
 	samplenumber=0
         for samplename in samplenames:
           if samplename in sample:
@@ -187,11 +196,12 @@ for runSet in [1,2]:
 	        his.Add(hist,weight)
  	        hist=his
 		break
-    if "QCD" in sample and not "1800" in sample:
+    if "QCD" in sample and not "1800" in sample and not "flat" in sample:
+        firstQCD=False
         continue
 
-    if runSet==1 and not "2000" in sample:
-        samplenames=["2000","3000","4000","5000","7000"]
+    if runSet==1 and not "1000" in sample:
+        samplenames=["1000","2000","3000","4000","5000","7000"]
 	samplenumber=0
         for samplename in samplenames:
           if samplename in sample:
@@ -225,7 +235,7 @@ for runSet in [1,2]:
             clone.SetBinError(b+1,clone.GetBinContent(b+1)*hist.GetBinError(b+1)/hist.GetBinContent(b+1))
 	hist=clone
     
-    if runSet==2 and nominator==2:
+    if runSet==3 and nominator==2:
       canvas.cd(2)
       ratio=hist.Clone(hist.GetName()+"clone")
       hists+=[ratio]
@@ -280,14 +290,14 @@ for runSet in [1,2]:
     else:
         firsthist.GetYaxis().SetRangeUser(0,1)
 
-    if "QCD" in sample and nominator==1 and "ecal" in sample:
-      legend.AddEntry(hist,"QCD Pythia8: m_{pruned} cut (modified PF)","l")
-    elif "QCD" in sample and nominator==2 and "ecal" in sample:
-      legend.AddEntry(hist,"QCD Pythia8: m_{pruned} & #tau_{2}/#tau_{1} cut (modified PF)","l")
-    elif "W" in sample and nominator==1 and "ecal" in sample:
-        legend.AddEntry(hist,"X #rightarrow W_{T}W_{T} Pythia8: m_{pruned} cut (modified PF)","l")
-    elif "W" in sample and nominator==2 and "ecal" in sample:
-        legend.AddEntry(hist,"X #rightarrow W_{T}W_{T} Pythia8: m_{pruned} & #tau_{2}/#tau_{1} cut (modified PF)","l")
+    if "QCD" in sample and nominator==1 and "split" in sample:
+      legend.AddEntry(hist,"QCD Pythia8: m_{pruned} cut","l")
+    elif "QCD" in sample and nominator==2 and "split" in sample:
+      legend.AddEntry(hist,"QCD Pythia8: m_{pruned} & #tau_{2}/#tau_{1} cut","l")
+    elif "W" in sample and nominator==1 and "split" in sample:
+        legend.AddEntry(hist,"X #rightarrow W_{T}W_{T} Pythia8: m_{pruned} cut","l")
+    elif "W" in sample and nominator==2 and "split" in sample:
+        legend.AddEntry(hist,"X #rightarrow W_{T}W_{T} Pythia8: m_{pruned} & #tau_{2}/#tau_{1} cut","l")
     elif "QCD" in sample and nominator==1:
       legend.AddEntry(hist,"QCD Pythia8: m_{pruned} cut (default PF)","l")
     elif "QCD" in sample and nominator==2:
@@ -330,7 +340,7 @@ for runSet in [1,2]:
   #if runSet==2:
   #  banner = TLatex(0.27,0.93,"CMS Preliminary, 19.6 fb^{-1}, #sqrt{s} = 8 TeV, dijets");
   #else:
-  banner = TLatex(0.24,0.93,"CMS Preliminary Simulation, #sqrt{s} = 8 TeV, dijets");
+  banner = TLatex(0.24,0.93,"CMS Preliminary Simulation, #sqrt{s} = 13 TeV");
   banner.SetNDC()
   banner.SetTextSize(0.04)
   banner.Draw();  

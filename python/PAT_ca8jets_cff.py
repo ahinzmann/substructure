@@ -31,9 +31,9 @@ patJetGenJetMatchCA8CHS = patJetGenJetMatch.clone()
 patJetGenJetMatchCA8CHS.src = jetSource
 patJetGenJetMatchCA8CHS.matched = 'ca8GenJetsNoNu'
 
-from PhysicsTools.PatAlgos.mcMatchLayer0.jetFlavourId_cff import *
-patJetPartonAssociationCA8CHS = patJetPartonAssociation.clone()
-patJetPartonAssociationCA8CHS.jets = jetSource
+#from PhysicsTools.PatAlgos.mcMatchLayer0.jetFlavourId_cff import *
+#patJetPartonAssociationCA8CHS = patJetPartonAssociation.clone()
+#patJetPartonAssociationCA8CHS.jets = jetSource
 
 # pat jets
 
@@ -145,9 +145,9 @@ patJetGenJetMatchCA8CHSpruned = patJetGenJetMatch.clone()
 patJetGenJetMatchCA8CHSpruned.src = jetSource
 patJetGenJetMatchCA8CHSpruned.matched = 'ca8GenJetsNoNu'
 
-from PhysicsTools.PatAlgos.mcMatchLayer0.jetFlavourId_cff import *
-patJetPartonAssociationCA8CHSpruned = patJetPartonAssociation.clone()
-patJetPartonAssociationCA8CHSpruned.jets = jetSource
+#from PhysicsTools.PatAlgos.mcMatchLayer0.jetFlavourId_cff import *
+#patJetPartonAssociationCA8CHSpruned = patJetPartonAssociation.clone()
+#patJetPartonAssociationCA8CHSpruned.jets = jetSource
 
 # pat jets
 
@@ -305,9 +305,9 @@ patJetGenJetMatchCA8CHStrimmed = patJetGenJetMatch.clone()
 patJetGenJetMatchCA8CHStrimmed.src = jetSource
 patJetGenJetMatchCA8CHStrimmed.matched = 'ca8GenJetsNoNu'
 
-from PhysicsTools.PatAlgos.mcMatchLayer0.jetFlavourId_cff import *
-patJetPartonAssociationCA8CHStrimmed = patJetPartonAssociation.clone()
-patJetPartonAssociationCA8CHStrimmed.jets = jetSource
+#from PhysicsTools.PatAlgos.mcMatchLayer0.jetFlavourId_cff import *
+#patJetPartonAssociationCA8CHStrimmed = patJetPartonAssociation.clone()
+#patJetPartonAssociationCA8CHStrimmed.jets = jetSource
 
 # pat jets
 
@@ -393,7 +393,7 @@ PATCMGJetSequenceCA8CHStrimmed = cms.Sequence(
 
 #### Adding Nsubjetiness
 
-selectedPatJetsCA8CHSwithNsub = cms.EDProducer("NjettinessAdder",
+selectedPatJetsCA8CHSwithNsub = cms.EDProducer("NjettinessAdder2",
                               src=cms.InputTag("selectedPatJetsCA8CHS"),
                               cone=cms.double(0.8)
                               )

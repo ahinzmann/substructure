@@ -26,7 +26,7 @@ TGaxis.SetMaxDigits(3)
 if __name__ == '__main__':
 
  for filename in ["QCD1000","WW4000","WW3000","QCD30","QCD170"]:
-  for runSet in [31,32,33,34]:
+  for runSet in [31,32,33,34,35,36]:
    for resolution in [False,True]:
      
      if runSet==31:
@@ -70,6 +70,7 @@ if __name__ == '__main__':
  	       "ungroomedmass",
  	       "mass",
  	       "mass_dr01",
+               "tau21",
                "tau21_aftermass",
 	       "nconstituents",
 	       "chargedMultiplicity",
@@ -82,6 +83,7 @@ if __name__ == '__main__':
  	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4))","jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4))","#tau_{2}/#tau_{1}", ),
            ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
            ("Jet1nConstituents","((abs(Jet1eta)<2.4))","jet constituents", ),
            ("Jet1chargedMultiplicity","((abs(Jet1eta)<2.4))","jet charged constituents", ),
@@ -114,6 +116,7 @@ if __name__ == '__main__':
  	       "ungroomedmass",
  	       "mass",
  	       "mass_dr01",
+               "tau21",
                "tau21_aftermass",
 	       "nconstituents"
  	       ]
@@ -121,6 +124,7 @@ if __name__ == '__main__':
  	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","pruned jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","#tau_{2}/#tau_{1}", ),
            ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
            ("Jet1nConstituents","((abs(Jet1eta)<2.4)&&(deta<1.3)&&(DijetMass>2000)&&(Jet1pt>1100)&&(Jet1pt<1700))","jet constituents", ),
  	       ]
@@ -134,14 +138,14 @@ if __name__ == '__main__':
 
      if runSet==34:
       if not ("WW3000" in filename or "WW4000" in filename): continue
-      samples = [#"substructure_pas_"+filename+"_posHCAL.root",
- 		 "substructure_pas_"+filename+"_posHCAL_noSplitting.root",
+      samples = ["substructure_pas_"+filename+"_posHCAL_noSplitting.root",
  		 "substructure_pas_"+filename+"_posHCAL_splitting.root",
  		 ]
       names = ["pt",
  	       "ungroomedmass",
  	       "mass",
  	       "mass_dr01",
+               "tau21",
                "tau21_aftermass",
 	       "nconstituents",
 	       "chargedMultiplicity",
@@ -154,6 +158,7 @@ if __name__ == '__main__':
  	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4))","jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
  	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4))","#tau_{2}/#tau_{1}", ),
            ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
            ("Jet1nConstituents","((abs(Jet1eta)<2.4))","jet constituents", ),
            ("Jet1chargedMultiplicity","((abs(Jet1eta)<2.4))","jet charged constituents", ),
@@ -165,6 +170,94 @@ if __name__ == '__main__':
       colors=[4,2,1,6,2,2,6,6,6]
       styles=[2,1,3,2,1,3,2,1,3]
       widths=[2,1,1,2,1,1,2,1,1]
+      #colors=[4,4,2,2,6,6]
+      #styles=[2,1,2,1,2,1]
+      #widths=[2,1,2,1,2,1]
+      sets=[""]
+
+     if runSet==35:
+      if not ("WW3000" in filename): continue
+      samples = [#"substructure_pas_"+filename+"_posHCAL.root",
+                 #"substructure_pas_"+filename+"_710pre8.root",
+ 		 #"substructure_pas_"+filename+"_710pre8_track.root",
+		 #"substructure_pas_"+filename+"_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+ 		 "substructure_pas_"+filename+"_711_splitMergedNeutrals.root",
+		 "substructure_pas_"+filename+"_711_jetCoreTrack_splitMergedNeutrals.root",
+		 "substructure_pas_"+filename+"_711_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+ 		 ]
+      names = ["pt",
+ 	       "ungroomedmass",
+ 	       "mass",
+ 	       "mass_dr01",
+               "tau21",
+               "tau21_aftermass",
+	       "nconstituents",
+	       "chargedMultiplicity",
+	       "chargedHadronEnergyFraction",
+	       "neutralHadronEnergyFraction",
+	       "chargedEmEnergyFraction",
+	       "neutralEmEnergyFraction",
+ 	       ]
+      plots = [("Jet1pt","((abs(Jet1eta)<2.4))","jet p_{T} (GeV)"),
+ 	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4))","jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4))","#tau_{2}/#tau_{1}", ),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
+           ("Jet1nConstituents","((abs(Jet1eta)<2.4))","jet constituents", ),
+           ("Jet1chargedMultiplicity","((abs(Jet1eta)<2.4))","jet charged constituents", ),
+           ("Jet1chargedHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet CHF", ),
+           ("Jet1neutralHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet NHF", ),
+           ("Jet1chargedEmEnergyFraction","((abs(Jet1eta)<2.4))","jet CEF", ),
+           ("Jet1neutralEmEnergyFraction","((abs(Jet1eta)<2.4))","jet NEF", ),
+ 	       ]
+      colors=[4,2,1,6,2,2,6,6,6]
+      styles=[2,1,3,2,1,3,2,1,3]
+      widths=[1,2,3,2,1,1,2,1,1]
+      #colors=[4,4,2,2,6,6]
+      #styles=[2,1,2,1,2,1]
+      #widths=[2,1,2,1,2,1]
+      sets=[""]
+
+     if runSet==36:
+      if not ("WW3000" in filename): continue
+      samples = [#"substructure_pas_"+filename+"_posHCAL.root",
+                 #"substructure_pas_"+filename+"_710pre8.root",
+ 		 #"substructure_pas_"+filename+"_710pre8_track.root",
+		 #"substructure_pas_"+filename+"_710pre8_posHCAL_jetCoreTrack_clusterSplit_splitMergedNeutrals.root",
+ 		 "substructure_pas_"+filename+"_711_splitMergedNeutrals_PU40.root",
+		 "substructure_pas_"+filename+"_711_jetCoreTrack_splitMergedNeutrals_PU40.root",
+		 "substructure_pas_"+filename+"_711_jetCoreTrack_clusterSplit_splitMergedNeutrals_PU40.root",
+ 		 ]
+      names = ["pt",
+ 	       "ungroomedmass",
+ 	       "mass",
+ 	       "mass_dr01",
+               "tau21",
+               "tau21_aftermass",
+	       "nconstituents",
+	       "chargedMultiplicity",
+	       "chargedHadronEnergyFraction",
+	       "neutralHadronEnergyFraction",
+	       "chargedEmEnergyFraction",
+	       "neutralEmEnergyFraction",
+ 	       ]
+      plots = [("Jet1pt","((abs(Jet1eta)<2.4))","jet p_{T} (GeV)"),
+ 	       ("Jet1UnGroomedMass","((abs(Jet1eta)<2.4))","jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4))","pruned jet mass (GeV)"),
+ 	       ("Jet1Mass","((abs(Jet1eta)<2.4)&&(abs(parton_dR_1)<0.14))","pruned jet mass (GeV)"),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4))","#tau_{2}/#tau_{1}", ),
+           ("Jet1Nsub","((abs(Jet1eta)<2.4)&&(Jet1Mass>60)&&(Jet1Mass<100))","#tau_{2}/#tau_{1}", ),
+           ("Jet1nConstituents","((abs(Jet1eta)<2.4))","jet constituents", ),
+           ("Jet1chargedMultiplicity","((abs(Jet1eta)<2.4))","jet charged constituents", ),
+           ("Jet1chargedHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet CHF", ),
+           ("Jet1neutralHadronEnergyFraction","((abs(Jet1eta)<2.4))","jet NHF", ),
+           ("Jet1chargedEmEnergyFraction","((abs(Jet1eta)<2.4))","jet CEF", ),
+           ("Jet1neutralEmEnergyFraction","((abs(Jet1eta)<2.4))","jet NEF", ),
+ 	       ]
+      colors=[4,2,1,6,2,2,6,6,6]
+      styles=[2,1,3,2,1,3,2,1,3]
+      widths=[1,2,3,2,1,1,2,1,1]
       #colors=[4,4,2,2,6,6]
       #styles=[2,1,2,1,2,1]
       #widths=[2,1,2,1,2,1]
@@ -340,36 +433,65 @@ if __name__ == '__main__':
  	else:
  	    variable,cutstring=gen+plot[0],plot[1]
  	
- 	#if "WW" in sample:
- 	#  cutstring+="&&(Jet1genWhadronic==1)"
- 	if resolution and variable=="Jet1PrunedMass":
-	    if "WW" in sample:
-	        variable="(Jet1PrunedMass-GenJet1Mass)"
- 	    else:
+ 	if "WW" in sample or "qW" in sample:
+ 	  cutstring+="&&(Jet1genWhadronic==1)"
+
+	if resolution and variable=="Jet1PrunedMass":
+	    #if "WW" in sample:
+	    #    variable="(Jet1PrunedMass-GenJet1Mass)"
+ 	    #else:
 	        variable="(Jet1PrunedMass-GenJet1Mass)/GenJet1Mass"
  	if resolution and variable=="Jet1UnGroomedMass":
-	    if "WW" in sample:
-                variable="(Jet1UnGroomedMass-GenJet1UnGroomedMass)"
- 	    else:
+	    #if "WW" in sample:
+            #    variable="(Jet1UnGroomedMass-GenJet1UnGroomedMass)"
+ 	    #else:
  	        variable="(Jet1UnGroomedMass-GenJet1UnGroomedMass)/GenJet1UnGroomedMass"
+ 	if resolution and variable=="Jet1TrimmedMass":
+	    #if "WW" in sample:
+            #    variable="(Jet1TrimmedMass-GenJet1TrimmedMass)"
+ 	    #else:
+ 	        variable="(Jet1TrimmedMass-GenJet1TrimmedMass)/GenJet1TrimmedMass"
+ 	if resolution and variable=="Jet1TrackMass":
+	    #if "WW" in sample:
+            #    variable="(Jet1TrackMass-GenJet1TrackMass)"
+ 	    #else:
+ 	        variable="(Jet1TrackMass-GenJet1TrackMass)/GenJet1TrackMass"
  	if resolution and variable=="Jet1Mass":
-	    if "WW" in sample:
- 	        variable="(Jet1Mass-GenJet1Mass)"
- 	    else:
+	    #if "WW" in sample:
+ 	    #    variable="(Jet1Mass-GenJet1Mass)"
+ 	    #else:
  	        variable="(Jet1Mass-GenJet1Mass)/GenJet1Mass"
  	if resolution and variable=="Jet1pt":
  	    variable="(Jet1pt-GenJet1pt)/GenJet1pt"
+ 	if resolution and variable=="Jet1eta":
+ 	    variable="(Jet1eta-GenJet1eta)"
+ 	if resolution and variable=="Jet1phi":
+ 	    variable="(Jet1phi-GenJet1phi)"
+ 	if resolution and variable=="Jet1Nsub":
+ 	    variable="(Jet1Nsub-GenJet1Nsub)"
+ 	if resolution and variable=="Jet1nConstituents":
+ 	    variable="(Jet1nConstituents-GenJet1nConstituents)/GenJet1nConstituents"
+ 	if resolution and variable=="Jet1chargedMultiplicity":
+ 	    variable="(Jet1chargedMultiplicity-GenJet1chargedMultiplicity)/GenJet1chargedMultiplicity"
+ 	if resolution and variable=="Jet1chargedHadronEnergyFraction":
+ 	    variable="(Jet1chargedHadronEnergyFraction-GenJet1chargedHadronEnergyFraction)/GenJet1chargedHadronEnergyFraction"
  	
- 	if resolution and "/" in variable:
-           hist=TH1F(histname,histname,200,-1.0,1.0);
+ 	if resolution and "/" in variable and (variable=="(Jet1chargedMultiplicity-GenJet1chargedMultiplicity)/GenJet1chargedMultiplicity" or variable=="(Jet1nConstituents-GenJet1nConstituents)/GenJet1nConstituents"):
+           hist=TH1F(histname,histname,10,-1,1);
  	   hist.GetYaxis().SetRangeUser(0,50000)
- 	if resolution and not "/" in variable:
-           hist=TH1F(histname,histname,100,-100,100);
+ 	elif resolution and "/" in variable:
+           hist=TH1F(histname,histname,40,-1,1);
+ 	   hist.GetYaxis().SetRangeUser(0,50000)
+ 	elif resolution:
+           hist=TH1F(histname,histname,40,-1,1);
+ 	   hist.GetYaxis().SetRangeUser(0,50000)
+ 	elif resolution and not "/" in variable:
+           hist=TH1F(histname,histname,50,-100,100);
  	   hist.GetYaxis().SetRangeUser(0,50000)
 
  	print histname,variable,cutstring
  	tree.Project(histname,variable,cutstring)
- 	if runSet==31 or runSet==32 or runSet==33 or runSet==34:
+ 	if runSet==31 or runSet==32 or runSet==33 or runSet==34 or runSet==35 or runSet==36:
  	   hist.Rebin(2)
  	if "QCD" in sample:
  	    originalIntegral[histname]=hist.Integral()
@@ -522,6 +644,24 @@ if __name__ == '__main__':
  	elif runSet==34 and s==2:
  	  legend.AddEntry(hist,"with splitting","l")
  	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==35 and s==1:
+ 	  legend.AddEntry(hist,"711","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==35 and s==2:
+ 	  legend.AddEntry(hist,"711 + jet core","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==35 and s==3:
+ 	  legend.AddEntry(hist,"711 + jet core + cluster split","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==36 and s==1:
+ 	  legend.AddEntry(hist,"711","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==36 and s==2:
+ 	  legend.AddEntry(hist,"711 + jet core","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
+ 	elif runSet==36 and s==3:
+ 	  legend.AddEntry(hist,"711 + jet core + cluster split","l")
+ 	  legend.AddEntry(hist,"mean=%0.3f, RMS=%0.3f"%(means[-1],rms[-1]),"")
  	else:
  	  legend.AddEntry(hist," + <PU>=22 + sim.","l")
  	counter+=1
@@ -552,7 +692,7 @@ if __name__ == '__main__':
  	legend2b.SetFillStyle(0)
  	legend2b.Draw("same")
 
-      banner = TLatex(0.24,0.93,"CMS Preliminary Simulation, #sqrt{s} = 8 TeV, dijets");
+      banner = TLatex(0.24,0.93,"CMS Preliminary Simulation, #sqrt{s} = 13 TeV");
       banner.SetNDC()
       banner.SetTextSize(0.04)
       banner.Draw();  

@@ -5,7 +5,7 @@
 # with command line options: run_reco --scenario pp --conditions auto:startup --mc -s DIGI,L1,DIGI2RAW,HLT,RAW2DIGI,L1Reco,RECO --eventcontent FEVTSIM
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process('privateReRECO')
+process = cms.Process('SPLIT')
 
 # import of standard configurations
 process.load('Configuration.StandardSequences.Services_cff')
@@ -26,7 +26,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(2000)
+    input = cms.untracked.int32(3000)
 )
 
 # Input source
@@ -35,13 +35,13 @@ process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring('/store/relval/CMSSW_7_0_0_pre11/RelValQCD_Pt_3000_3500_13/GEN-SIM-RECO/POSTLS162_V4-v1/00000/1EB55025-856A-E311-A1FB-00248C55CC97.root')
 )
 
-sample="QCD1800"
+sample="WW4000"
 
 if sample=="ZTT":
   folder="/store/relval/CMSSW_7_0_0_pre11/RelValZTT_13/GEN-SIM-RECO/PU25ns_POSTLS162_V4-v1/00000/"
   process.source.fileNames = cms.untracked.vstring(
 folder+'327688C1-726A-E311-8124-003048F1C9F2.root',
-folder+'38ED2AqB0-736A-E311-9A5D-0025B32038DC.root',
+folder+'38ED2AB0-736A-E311-9A5D-0025B32038DC.root',
 folder+'3ED0B219-766A-E311-BD32-003048F236DC.root',
 folder+'3EFC33B5-736A-E311-A0BE-02163E00E7C6.root',
 folder+'4A6DCBC3-736A-E311-95D4-003048F23838.root',
@@ -206,47 +206,10 @@ folder+'F6CBBA80-D9D5-E211-BB95-003048344BA6.root',
 folder+'F8EF772E-C1D5-E211-9051-002590491B1C.root',
 )
 
-if sample=="qW3000":
-  folder="file:///tmp/hinzmann/"
-  process.source.fileNames = cms.untracked.vstring(
-folder+'02C796ED-C45D-E311-8519-E4115BE5F180.root',
-folder+'02D1D090-245D-E311-AF37-002481DE4938.root',
-folder+'0CC25F48-C45D-E311-8423-90B11C18754C.root',
-folder+'103030CE-245D-E311-8CC8-00266CFCCBF0.root',
-folder+'24D07BAE-265D-E311-8E2F-0025904AC2CA.root',
-folder+'38FD41DA-C55D-E311-83CA-B499BAAC09BE.root',
-#folder+'3E739E1F-6361-E311-A6A4-E0CB4E4408D3.root',
-folder+'401B9A90-B95D-E311-916F-80000048FE80.root',
-folder+'40641851-AA5D-E311-8599-00266CFCCDC8.root',
-folder+'465D7819-325E-E311-999D-00145E5523F3.root',
-folder+'484F1F35-225D-E311-80F7-1CC1DE051118.root',
-folder+'52819779-C45D-E311-B80F-002481DE485A.root',
-folder+'52EB01E1-B05D-E311-8560-003048C69272.root',
-folder+'5A4CA527-225D-E311-B0DB-1CC1DE1CDCAE.root',
-folder+'644D2407-0D5E-E311-B9A1-0025904C6378.root',
-folder+'6AF9B9CE-0C5E-E311-B477-0025904C67A6.root',
-folder+'70C49F4E-675E-E311-BEC1-90B11C18634A.root',
-folder+'70FF8F6D-C35D-E311-9ED0-20CF3027A589.root',
-folder+'7AFC666C-235D-E311-A6B1-782BCB539226.root',
-folder+'80ADBCBC-D45D-E311-9156-0022191F53BE.root',
-folder+'82154E6B-265D-E311-861E-008CFA166008.root',
-folder+'94479F6F-235D-E311-9D64-D4AE526DF5D7.root',
-folder+'9CF2B74E-235D-E311-ADFB-6C3BE5B5B340.root',
-folder+'A8DAB8B8-C35D-E311-95E3-002481E0DB7A.root',
-folder+'B231D6AA-265D-E311-BD58-90B11C26815E.root',
-folder+'B2B82231-A95D-E311-B474-0025904C637C.root',
-folder+'C605404D-AA5D-E311-934E-D4AE526DF3BB.root',
-folder+'C8B31761-235D-E311-A422-D4AE526DF3BB.root',
-folder+'C8D285BE-C45D-E311-A3AC-00304867FD63.root',
-folder+'CA512642-C55D-E311-9553-002590CB0B5A.root',
-folder+'F493DB3B-AA5D-E311-950F-0017A4770028.root',
-folder+'FABE8A48-225D-E311-BE01-1CC1DE046FC0.root',
-)
-
 if sample=="qW5000":
   folder="file:///tmp/hinzmann/"
-  #folder="root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_5000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/"
   process.source.fileNames = cms.untracked.vstring(
+folder+'A2FE269C-8658-E311-BA1A-20CF300E9EC3.root',
 #folder+'12F8E21A-7458-E311-B1E0-1CC1DE056008.root',
 #folder+'1AA92B3B-7A58-E311-82C9-00266CFE79A4.root',
 folder+'247149BB-7858-E311-8219-0017A4771024.root',
@@ -266,7 +229,6 @@ folder+'7E08502D-9B58-E311-B616-008CFA1979BC.root',
 folder+'905E3517-9158-E311-A941-0025901AFB36.root',
 folder+'983EECA5-9F58-E311-911A-782BCB2100C5.root',
 folder+'98B0411D-DE58-E311-BBB8-00266CF3DFE0.root',
-folder+'A2FE269C-8658-E311-BA1A-20CF300E9EC3.root',
 #folder+'B47737F3-D958-E311-A061-00144F4526DA.root',
 folder+'B64C2190-8158-E311-996B-0025900E3514.root',
 folder+'B8FDC626-8358-E311-BF4E-0025907B500C.root',
@@ -286,7 +248,6 @@ folder+'FAC3D566-7258-E311-A0D4-78E7D1E4B874.root',
 
 if sample=="qW7000":
   folder="file:///tmp/hinzmann/"
-  #folder="root://xrootd.unl.edu//store/mc/Fall13/QstarToQW_M_7000_Tune4C_13TeV_pythia8/GEN-SIM/POSTLS162_V1-v4/00000/"
   process.source.fileNames = cms.untracked.vstring(
 folder+'0009F12C-FF58-E311-AB45-00259073E34E.root',
 #folder+'0238D393-8F58-E311-ADB4-00259073E4CA.root',
@@ -2869,7 +2830,7 @@ process.FEVTSIMoutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     eventAutoFlushCompressedSize = cms.untracked.int32(5242880),
     outputCommands = process.FEVTSIMEventContent.outputCommands,
-    fileName = cms.untracked.string('/tmp/hinzmann/run_reco_DIGI_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO_'+sample+'_posHCAL_fixTRACK_splitPFecal.root'),#_posCAL_fixTRACK_noHCAL_showerSigma8
+    fileName = cms.untracked.string('/tmp/hinzmann/run_reco_DIGI_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO_'+sample+'_posHCAL_splitting.root'),#_posCAL_fixTRACK_noHCAL_showerSigma8
     dataset = cms.untracked.PSet(
         filterName = cms.untracked.string(''),
         dataTier = cms.untracked.string('')
@@ -2882,6 +2843,205 @@ process.FEVTSIMoutput.outputCommands+=["keep *_particleFlowRecHit*_*_*"]
 process.reconstruction_fromRECO.remove(process.ak5JetID)
 process.reconstruction_fromRECO.remove(process.ak7JetID)
 process.reconstruction_fromRECO.remove(process.ic5JetID)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# from Jean-Roch
+process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTemplate_cfi")
+process.StripCPEfromTrackAngleESProducer = process.StripCPEfromTemplateESProducer.clone(ComponentName='StripCPEfromTrackAngle')
+
+process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTemplate_cfi")
+process.StripCPEfromTemplateESProducer.UseTemplateReco = True
+
+# Include the latest pixel templates, which are not in DB. 
+# These are to be used for pixel splitting.
+process.load('RecoLocalTracker.SiPixelRecHits.PixelCPETemplateReco_cfi')
+process.templates.LoadTemplatesFromDB = False
+
+# This is the default speed. Recommended.
+process.StripCPEfromTrackAngleESProducer.TemplateRecoSpeed = 0;
+
+# Split clusters have larger errors. Appropriate errors can be 
+# assigned by turning UseStripSplitClusterErrors = True. The strip hit pull  
+# distributons improve considerably, but it does not help with b-tagging, 
+# so leave it False by default 
+process.StripCPEfromTrackAngleESProducer.UseStripSplitClusterErrors = True
+
+# Turn OFF track hit sharing
+process.load("TrackingTools.TrajectoryCleaning.TrajectoryCleanerBySharedHits_cfi")
+process.trajectoryCleanerBySharedHits.fractionShared = 0.0
+process.trajectoryCleanerBySharedHits.allowSharedFirstHit = False
+process.load("RecoTracker.FinalTrackSelectors.simpleTrackListMerger_cfi")
+process.simpleTrackListMerger.ShareFrac = 0.0
+process.simpleTrackListMerger.allowFirstHitShare = False
+
+# The second step is to split merged clusters.
+process.splitClusters = cms.EDProducer(
+    "TrackClusterSplitter",
+    stripClusters         = cms.InputTag("siStripClusters::SPLIT"),
+    pixelClusters         = cms.InputTag("siPixelClusters::SPLIT"),
+    useTrajectories       = cms.bool(False),
+    trajTrackAssociations = cms.InputTag('generalTracks::SPLIT'),
+    tracks                = cms.InputTag('pixelTracks::SPLIT'),
+    propagator            = cms.string('AnalyticalPropagator'),
+    vertices              = cms.InputTag('pixelVertices::SPLIT'),
+    simSplitPixel         = cms.bool(False), # ideal pixel splitting turned OFF
+    simSplitStrip         = cms.bool(False), # ideal strip splitting turned OFF
+    tmpSplitPixel         = cms.bool(True), # template pixel spliting
+    tmpSplitStrip         = cms.bool(True), # template strip splitting
+    useStraightTracks     = cms.bool(True),
+    test     = cms.bool(True)
+    )
+
+process.mySiPixelRecHits = process.siPixelRecHits.clone(src = cms.InputTag("splitClusters"))
+process.mySiStripRecHits = process.siStripMatchedRecHits.clone(
+    src = cms.InputTag("splitClusters"),  ClusterProducer = cms.InputTag("splitClusters")
+    )
+
+############################## inserted new stuff
+                            
+# from Jean-Roch 
+process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTemplate_cfi")
+process.StripCPEfromTrackAngleESProducer = process.StripCPEfromTemplateESProducer.clone(ComponentName='StripCPEfromTrackAngle')
+
+process.load("RecoLocalTracker.SiStripRecHitConverter.StripCPEfromTemplate_cfi")
+process.StripCPEfromTemplateESProducer.UseTemplateReco = True
+
+# Include the latest pixel templates, which are not in DB. 
+# These are to be used for pixel splitting.
+process.load('RecoLocalTracker.SiPixelRecHits.PixelCPETemplateReco_cfi')
+process.templates.LoadTemplatesFromDB = False
+
+# This is the default speed. Recommended.
+process.StripCPEfromTrackAngleESProducer.TemplateRecoSpeed = 0;
+
+############################## inserted new stuff
+
+process.newrechits = cms.Sequence(process.mySiPixelRecHits*process.mySiStripRecHits)
+
+######## track to vertex assoc ##################3
+from CommonTools.RecoUtils.pf_pu_assomap_cfi import AssociationMaps
+process.Vertex2TracksDefault = AssociationMaps.clone(
+    AssociationType = cms.InputTag("VertexToTracks"),
+    MaxNumberOfAssociations = cms.int32(1)
+)
+
+# The commands included in splitter_tracking_setup_cff.py instruct 
+# the tracking machinery to use the clusters and rechits generated after 
+# cluster splitting (instead of the default clusters and rechits)
+process.load('Ntuples.substructure.splitter_tracking_setup_700_cff')
+## from  Configuration.StandardSequences.Reconstruction_cff import *
+## process.myglobalreco = cms.Sequence(offlineBeamSpot*
+##                       MeasurementTrackerEvent* # unclear where to put this
+##                       standalonemuontracking*
+##                       recopixelvertexing*
+##                       trackingGlobalReco## *
+##                           vertexreco*
+##                           hcalGlobalRecoSequence*
+##                           particleFlowCluster*
+##                           ecalClusters*
+##                           caloTowersRec*                          
+##                           egammaGlobalReco*
+##                           jetGlobalReco*
+##                           muonGlobalReco*
+##                           pfTrackingGlobalReco*
+##                           muoncosmicreco*
+##                           CastorFullReco
+##                           )
+
+process.fullreco = cms.Sequence(process.globalreco*process.highlevelreco)
+process.Globalreco = cms.Sequence(process.globalreco)
+process.Highlevelreco = cms.Sequence(process.highlevelreco)
+
+process.options = cms.untracked.PSet(
+)
+
+process.load("RecoTracker.TrackProducer.TrackRefitters_cff")
+
+# Output definition
+process.PixelTreeSplit = cms.EDAnalyzer(
+    "PixelAnalysisTree",
+    verbose                = cms.untracked.int32(0),
+    rootFileName           = cms.untracked.string('pixelTrees_TS_DATA.root'),
+    treeName               = cms.untracked.string('treeTmpSplit'),
+    dumpAllEvents          = cms.untracked.int32(1),
+    globalTag              = cms.string("GR_R_53::All"),
+    muonCollectionLabel    = cms.untracked.InputTag('muons'),
+#    trajectoryInputLabel   = cms.untracked.InputTag('TrackRefitter'),
+    trajectoryInputLabel   = cms.untracked.InputTag('generalTracks::SPLIT'),          
+    trackCollectionLabel   = cms.untracked.InputTag('generalTracks::SPLIT'),
+    pixelClusterLabel      = cms.untracked.InputTag('splitClusters'),
+    pixelRecHitLabel       = cms.untracked.InputTag('mySiPixelRecHits'),
+    L1GTReadoutRecordLabel = cms.untracked.InputTag("gtDigis"),
+    hltL1GtObjectMap       = cms.untracked.InputTag("hltL1GtObjectMap"),          
+    HLTResultsLabel        = cms.untracked.InputTag("TriggerResults::HLT"),
+    HLTProcessName         = cms.untracked.string("HLT"),
+    mapTrack2Vertex        = cms.untracked.bool(True)
+    )
+
+
+process.RECOoutput = cms.OutputModule("PoolOutputModule",
+    #splitLevel = cms.untracked.int32(0),
+    outputCommands = process.RECOEventContent.outputCommands,
+    fileName = cms.untracked.string('TTbar700_split.root'),
+    dataset = cms.untracked.PSet(
+        #filterName = cms.untracked.string(''),
+        dataTier = cms.untracked.string('RECO')
+    )
+)
+
+# Additional output definition
+process.dump = cms.EDAnalyzer("EventContentAnalyzer")
+# Other statements
+
+#process.GlobalTag.globaltag = 'START70_V1::All'
+#process.GlobalTag.globaltag = 'GR_R_52_V7::All'
+
+
+# Path and EndPath definitions
+process.init_step = cms.Path(cms.Sequence(process.localreco*process.offlineBeamSpot+process.recopixelvertexing)) #process.RawToDigi*
+process.dump_step = cms.Path(process.dump)
+process.splitClusters_step=cms.Path(process.splitClusters)
+process.newrechits_step=cms.Path(process.newrechits)
+##process.Globalreco_step = cms.Path(process.Globalreco)
+#process.Highlevelreco_step = cms.Path(process.Highlevelreco)
+process.fullreco_step=cms.Path(process.fullreco)
+#process.endjob_step = cms.EndPath(process.endOfProcess)
+#process.RECOoutput_step = cms.EndPath(process.RECOoutput)
+process.pixeltree_tempsplit =cms.Path(process.PixelTreeSplit)
+process.vertex_assoc = cms.Path(process.Vertex2TracksDefault)
+
+# Schedule definition
+#process.schedule = cms.Schedule(process.init_step,process.splitClusters_step,process.newrechits_step,process.fullreco_step,process.vertex_assoc,process.pixeltree_tempsplit)
+
+#process.schedule = cms.Schedule(process.init_step,process.splitClusters_step,process.newrechits_step,process.fullreco_step,process.RECOoutput_step)
+#process.schedule = cms.Schedule(process.init_step,process.splitClusters_step,process.newrechits_step,process.Globalreco_step,process.RECOoutput_step)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #process.particleFlowClusterHCAL.nNeighbours=0
 #process.particleFlowClusterHCAL.showerSigma=8
@@ -2903,27 +3063,13 @@ process.reconstruction_step = cms.Path(process.reconstruction)
 process.endjob_step = cms.EndPath(process.endOfProcess)
 process.FEVTSIMoutput_step = cms.EndPath(process.FEVTSIMoutput)
 
-process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
-process.printTree2 = cms.EDAnalyzer("ParticleTreeDrawer",
-                                   src = cms.InputTag("genParticles"),                                                                 
-                                   printP4 = cms.untracked.bool(False),
-                                   printPtEtaPhi = cms.untracked.bool(False),
-                                   printVertex = cms.untracked.bool(False),
-                                   printStatus = cms.untracked.bool(False),
-                                   printIndex = cms.untracked.bool(False),
-                                   status = cms.untracked.vint32( -1 )
-                                   )
-process.printTree = cms.EDAnalyzer("ParticleListDrawer",
-  maxEventsToPrint = cms.untracked.int32(1),
-  printVertex = cms.untracked.bool(False),
-  src = cms.InputTag("genParticles")
-)
-process.gen_print = cms.Path(process.printTree)
-
 # Schedule definition
-process.schedule = cms.Schedule(process.gen_print,process.digitisation_step,process.L1simulation_step,process.digi2raw_step)
+process.schedule = cms.Schedule(process.digitisation_step,process.L1simulation_step,process.digi2raw_step)
 process.schedule.extend(process.HLTSchedule)
-process.schedule.extend([process.raw2digi_step,process.L1Reco_step,process.reconstruction_step,process.endjob_step,process.FEVTSIMoutput_step])
+process.schedule.extend([process.raw2digi_step,process.L1Reco_step,
+process.init_step,process.splitClusters_step,process.newrechits_step,process.fullreco_step,
+#process.reconstruction_step,
+process.endjob_step,process.FEVTSIMoutput_step])
 
 # customisation of the process.
 

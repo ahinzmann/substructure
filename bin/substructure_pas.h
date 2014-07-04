@@ -175,7 +175,12 @@ std::vector<double>	jethelperCA8_prunedjetmass(10,0);
 std::vector<double>	jethelperCA8_correctedprunedjetmass(10,0);
 std::vector<double>	jethelperCA8_trackjetmass(10,0);
 std::vector<double>	jethelperCA8_splitblockprunedjetmass(10,0);
+std::vector<float>	jethelperCA8_width(10,0);
 std::vector<int>	jethelperCA8_nConstituents(10,0);
+std::vector<int>	jethelperCA8_nPFblocks(10,0);
+std::vector<int>	jethelperCA8_nECALclusters(10,0);
+std::vector<int>	jethelperCA8_nHCALclusters(10,0);
+std::vector<double>	jethelperCA8_ak8mass(10,0);
 std::vector<int>	jethelperCA8_partonFlavour(10,0);
 std::vector<float>	jethelperCA8_chargedEmEnergyFraction(10,0);
 std::vector<float>	jethelperCA8_chargedHadronEnergyFraction(10,0);
@@ -257,7 +262,15 @@ std::vector<double>	jethelperGenCA8_eta(10,0);
 std::vector<double>	jethelperGenCA8_rapidity(10,0);
 std::vector<float>	jethelperGenCA8_jetArea(10,0);
 std::vector<double>	jethelperGenCA8_mass(10,0);
+
+std::vector<float>	jethelperGenCA8_width(10,0);
 std::vector<int>	jethelperGenCA8_nConstituents(10,0);
+std::vector<float>	jethelperGenCA8_chargedEmEnergyFraction(10,0);
+std::vector<float>	jethelperGenCA8_chargedHadronEnergyFraction(10,0);
+std::vector<int>	jethelperGenCA8_chargedMultiplicity(10,0);
+std::vector<float>	jethelperGenCA8_neutralEmEnergyFraction(10,0);
+std::vector<float>	jethelperGenCA8_neutralHadronEnergyFraction(10,0);
+
 std::vector<int>	jethelperGenCA8_partonFlavour(10,0);
 std::vector<double>	jethelperGenCA8_phi(10,0);
 std::vector<double>	jethelperGenCA8_pt(10,0);

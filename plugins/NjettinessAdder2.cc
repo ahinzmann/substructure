@@ -1,9 +1,9 @@
-#include "Ntuples/substructure/plugins/NjettinessAdder.h"
+#include "Ntuples/substructure/plugins/NjettinessAdder2.h"
 #include "Ntuples/substructure/interface/Njettiness.hh"
 
 #include "FWCore/Framework/interface/MakerMacros.h"
 
-void NjettinessAdder::produce(edm::Event & iEvent, const edm::EventSetup & iSetup) {
+void NjettinessAdder2::produce(edm::Event & iEvent, const edm::EventSetup & iSetup) {
   // read input collection
   edm::Handle<edm::View<pat::Jet> > jets;
   iEvent.getByLabel(src_, jets);
@@ -26,7 +26,7 @@ void NjettinessAdder::produce(edm::Event & iEvent, const edm::EventSetup & iSetu
  
 }
 
-float NjettinessAdder::getTau(int num, edm::Ptr<pat::Jet> object) const
+float NjettinessAdder2::getTau(int num, edm::Ptr<pat::Jet> object) const
 {
   std::vector<const reco::PFCandidate*> all_particles;
   if(object->isPFJet())
@@ -53,4 +53,4 @@ float NjettinessAdder::getTau(int num, edm::Ptr<pat::Jet> object) const
 
 
 
-DEFINE_FWK_MODULE(NjettinessAdder);
+DEFINE_FWK_MODULE(NjettinessAdder2);

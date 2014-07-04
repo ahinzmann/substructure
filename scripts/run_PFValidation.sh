@@ -1,0 +1,11 @@
+cd ../../Validation/RecoParticleFlow/test/
+./RunPFVal.sh QCD1000
+./RunPFVal.sh QCD1000fixTRACK
+./RunPFVal.sh QCD1000posHCAL
+./RunPFVal.sh QCD170
+./RunPFVal.sh QCD170fixTRACK
+./RunPFVal.sh QCD170posHCAL
+./RunPFVal.sh QCD30
+./RunPFVal.sh QCD30fixTRACK
+./RunPFVal.sh QCD30posHCAL
+cd -

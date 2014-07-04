@@ -1,0 +1,10 @@
+root:///opt2/rootfiles/ntuple_QCDflat1_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat2_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat3_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat4_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat5_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat6_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat7_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat8_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat9_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
+root:///opt2/rootfiles/ntuple_QCDflat10_710pre8_posHCAL_jetCoreTrack_clusterSplit.root
